@@ -1,18 +1,20 @@
-# Presentation Script - SDG 1: No Poverty Analysis
-## 10-Minute Presentation Guide
+# Presentation Script
 
-**Total Time: 10 minutes**  
-**Slides: 1-16 (excluding backup)**
+## Visualizing Global Poverty Trends: SDG 1 Analysis with Focus on Philippines and ASEAN
+
+**Duration:** 10 minutes  
+**Format:** 18 slides  
+**Target Audience:** CS ELEC 3C Data Visualization Course
 
 ---
 
 ## SLIDE 1: Title Slide (30 seconds)
 
-**[Display slide, wait for attention]**
+**[Display title slide]**
 
-Good [morning/afternoon], everyone. Today I'll be presenting my data visualization project on **UN Sustainable Development Goal 1: No Poverty**. 
+Good morning/afternoon everyone. Today I'll be presenting our data visualization project on global poverty trends, specifically addressing UN Sustainable Development Goal 1: No Poverty.
 
-Over the next 10 minutes, I'll show you how data visualization can reveal powerful insights about global poverty trends over the past 33 years, from 1990 to 2023. We'll explore which regions have succeeded, which are struggling, and what factors correlate most strongly with poverty reduction.
+Our project analyzes over 60 years of World Development Indicators data across 217 countries, with a special focus on the Philippines and ASEAN region. We'll explore how extreme poverty has evolved globally, what drives successful poverty reduction, and where the Philippines stands in this global context.
 
 Let's begin.
 
@@ -20,463 +22,407 @@ Let's begin.
 
 ## SLIDE 2: The Global Poverty Challenge (45 seconds)
 
-**[Gesture to world map]**
+**[Show global poverty statistics]**
 
-Why does this matter? Currently, approximately **700 million people**—that's 9% of humanity—live in extreme poverty, surviving on less than $2.15 per day. 
+The United Nations' Sustainable Development Goal 1 aims to end poverty in all its forms by 2030. Currently, about 700 million people—roughly 9% of the global population—live in extreme poverty, defined as living on less than $2.15 per day.
 
-While this is a significant challenge, it's also a remarkable achievement: in 1990, that figure was 36%. We've reduced global poverty by **75%** in just three decades.
+But here's the remarkable part: we've made unprecedented progress. In 1990, 36% of the world lived in extreme poverty. Today, that's down to just 9%. That means over 1.2 billion people have been lifted out of poverty in just three decades.
 
-**[Point to map showing poverty concentration]**
-
-However, as this map shows, progress has been uneven. Success is concentrated in Asia, while Sub-Saharan Africa still struggles. Understanding these disparities is crucial for achieving the UN's goal of **ending poverty by 2030**.
-
-Poverty isn't just about money—it affects **life expectancy, education, health**, and creates cycles that trap families for generations.
-
-**[Transition]** So what questions did we seek to answer?
+However—and this is crucial—this progress has been highly uneven across regions, which is what our analysis explores.
 
 ---
 
-## SLIDE 3: Research Questions (30 seconds)
+## SLIDE 3: Research Questions (45 seconds)
 
-Our analysis addresses five key questions:
+**[Display three-tier framework]**
 
-1. **How has poverty evolved** across different regions?
-2. **Which countries succeeded** and which struggled—and why?
-3. **What development factors**—education, health, infrastructure—correlate most with poverty reduction?
-4. **How have countries transitioned** between different poverty levels?
-5. And critically: **Will we meet the 2030 target** on our current trajectory?
+Our research follows a three-tier analytical framework:
 
-**[Transition]** To answer these, we needed comprehensive data.
+At the **GLOBAL level**, we ask: How has extreme poverty evolved from 1981 to 2024? What are the geographic patterns? And critically, which development indicators correlate most strongly with poverty reduction?
 
----
+At the **ASEAN REGIONAL level**, we examine: How does the Philippines compare to its neighbors? Which ASEAN countries have been most successful, and where does the region stand relative to global trends?
 
-## SLIDE 4: Data & Methodology (45 seconds)
+Finally, at the **PHILIPPINES-SPECIFIC level**, we dive deep: What is the Philippines' current poverty status? How does it perform across multiple development dimensions? And what factors matter most for poverty reduction in our context?
 
-**[Point to table]**
-
-We used the **World Bank's World Development Indicators**—the gold standard for global development data. From over 1,400 available indicators, we carefully selected **12 key metrics** across five dimensions:
-
-- Poverty rate (our primary indicator)
-- Education: enrollment rates and literacy
-- Health: life expectancy and maternal mortality
-- Infrastructure: electricity, water, and sanitation access
-- Economic: GDP per capita and unemployment
-
-Our dataset covers **200+ countries over 33 years**—that's over 500,000 data points.
-
-**[Acknowledge challenges]**
-
-Of course, data isn't perfect. We had missing values for some countries and years. We addressed this through interpolation for short gaps and excluded countries missing more than half their poverty data. After cleaning, we had robust data for over 150 countries.
-
-**[Transition]** Let me show you what we discovered.
+This three-tier approach provides both broad context and specific, actionable insights.
 
 ---
 
-## SLIDE 5: Exploratory Analysis - Distributions (30 seconds)
+## SLIDE 4: Dataset Overview (45 seconds)
 
-**[Point to histogram]**
+**[Show dataset specifications]**
 
-First, we explored current poverty distributions. This histogram shows that most countries today have poverty rates below 20%, with a median of just 6.8%. But notice that long tail—some countries still face poverty rates exceeding 60%.
+Our analysis uses the World Bank's World Development Indicators—the most comprehensive dataset on global development. It covers 217 countries and territories from 1960 to 2024, with over 1,000 indicators spanning education, health, economy, and infrastructure.
 
-**[Point to box plots]**
+For our analysis, we selected 13 key indicators including poverty headcount, GDP per capita, life expectancy, electricity access, and school enrollment rates.
 
-The regional comparison reveals where that tail comes from: **Sub-Saharan Africa** has a median poverty rate of 22%, while **East Asia and Pacific** is under 3%. This massive disparity drives our analysis.
+Now, here's an important reality check: while the World Bank tracks 217 countries, only 169 have poverty measurements. 48 countries lack this data entirely. And even among those with data, the latest available year varies from 2018 to 2024. This data limitation is important context for interpreting our findings.
 
-**[Transition]** Now, let's dive into the main visualizations.
-
----
-
-## SLIDE 6: Visualization 1 - Global Poverty Map (1 minute)
-
-**[Point to map, describe color scheme]**
-
-This choropleth map shows the geographic distribution of poverty in 2023. Red indicates high poverty, green indicates low.
-
-**[Highlight regions]**
-
-Notice the clear patterns:
-- **East Asia**—almost entirely green. China, Vietnam, Thailand have achieved near-zero poverty.
-- **South Asia**—mostly yellow-green, showing good progress but work remaining.
-- **Sub-Saharan Africa**—predominantly red. Countries like Madagascar and Mozambique still have over 40% poverty rates.
-
-**[Mention interactivity]**
-
-In the interactive version, you can slide through years from 1990 to 2023 and watch East Asia transform from red to green, while Africa's progress is much slower. It's a powerful visualization of global inequality.
-
-**[Transition]** But how did we get here? Let's look at the trends.
+Despite these gaps, the dataset provides unprecedented insights into global poverty patterns.
 
 ---
 
-## SLIDE 7: Visualization 2 - Regional Trends Over Time (1 minute)
+## SLIDE 5: Methodology - Data Preparation (40 seconds)
 
-**[Trace the lines with pointer/hand]**
+**[Display methodology steps]**
 
-This time series chart tells a dramatic story.
+Our data preparation involved four key steps:
 
-**[Point to East Asia line]**
+First, we imported and filtered the raw WDI data, selecting our 13 key development indicators across all 217 countries and 65 years of data.
 
-East Asia—the blue line—shows the steepest decline: from **47% to 2%**. That's a 95% reduction. This is driven almost entirely by **China**, which lifted 850 million people out of poverty—over 70% of the global total.
+Second, we systematically documented missing data. We discovered that only 7 of 11 ASEAN countries have poverty data, which constrained our regional analysis.
 
-**[Point to South Asia line]**
+Third, we categorized countries into regional groups—ASEAN members, developed nations, and global benchmarks—to enable meaningful comparisons.
 
-South Asia—in orange—also shows strong progress: 44% down to 8%. India and Bangladesh are the success stories here.
-
-**[Point to Sub-Saharan Africa line]**
-
-But Sub-Saharan Africa—the red line—is the challenge. Despite falling from 54% to 35%, the **absolute number** of poor people in Africa has actually **increased** due to population growth. Africa now accounts for 60% of the world's extreme poor, up from 15% in 1990.
-
-**[Point to annotations]**
-
-Notice the annotations: the 2008 financial crisis caused a brief slowdown, and COVID-19 in 2020 pushed 70 million people back into poverty temporarily.
-
-**[Transition]** Let's examine how individual countries moved between poverty categories.
+Finally, we applied statistical techniques including Pearson correlation analysis, time-series trend analysis, and multi-dimensional comparisons. This rigorous approach ensures our conclusions are data-driven, not anecdotal.
 
 ---
 
-## SLIDE 8: Visualization 3 - Sankey Diagram (1 minute)
+## SLIDE 6: Methodology - Visualizations (40 seconds)
 
-**[Explain the diagram structure]**
+**[Show visualization types]**
 
-This Sankey diagram shows transitions between poverty categories from 1990 to 2023. On the left are 1990 categories, on the right are 2023 categories. The width of each flow represents the number of countries.
+From this prepared data, we created five publication-quality visualizations, each answering specific research questions:
 
-**[Point to categories]**
+**First**, an interactive choropleth map showing global poverty distribution across 169 countries, revealing geographic patterns at a glance.
 
-We defined four categories: Extreme (≥40%), High (20-40%), Moderate (10-20%), and Low (<10%).
+**Second**, a time-series line chart tracking ASEAN poverty trends over time, with the Philippines highlighted against the regional average.
 
-**[Trace green flows]**
+**Third**, a correlation heatmap quantifying relationships between poverty and development indicators, with statistical significance testing.
 
-The **green flows** represent improvement: **78 countries** moved to lower poverty categories. The largest flow is from Moderate to Low—42 countries achieved low poverty.
+**Fourth**, a radar chart providing a multi-dimensional comparison of the Philippines versus ASEAN average across six development dimensions.
 
-**[Point to stagnant gray]**
+And **fifth**, an interactive dashboard specifically for the Philippines, showing temporal evolution across poverty, GDP, education, and infrastructure.
 
-But **18 countries**—shown in gray—remained stuck in the Extreme category. Fourteen of these are in Sub-Saharan Africa.
-
-**[Trace red flows]**
-
-And disturbingly, **12 countries deteriorated**—the red flows. Venezuela collapsed from Low to High due to economic crisis. Syria and Yemen fell from Moderate to Extreme due to civil wars.
-
-**[Key takeaway]**
-
-This visualization powerfully illustrates that while most countries progressed, **conflict and governance failures can reverse decades of gains overnight**.
-
-**[Transition]** So what separates success from failure? Let's look at the correlations.
+Each visualization was designed not just to look good, but to answer specific research questions with clarity and statistical rigor.
 
 ---
 
-## SLIDE 9: Visualization 4 - What Correlates with Poverty Reduction? (1 minute)
+## SLIDE 7: Exploratory Data Analysis (35 seconds)
 
-**[Point to table of correlations]**
+**[Display EDA findings]**
 
-We calculated statistical correlations between poverty and various development indicators. The results are striking.
+Before creating our final visualizations, we conducted exploratory data analysis to understand data distributions and patterns.
 
-**[Emphasize top two]**
+We created distribution histograms for four key indicators—poverty, GDP, life expectancy, and electricity access—comparing global patterns, ASEAN countries, and the Philippines specifically. This revealed high global variance in poverty rates, ranging from 0% to over 85%.
 
-The strongest correlation is with **primary school enrollment**: negative 0.78. That's a very strong relationship. Close behind is **electricity access** at negative 0.76.
+Our temporal heatmap of 15 countries showed clear poverty reduction patterns over time, with ASEAN countries prioritized in the selection.
 
-**[Compare to GDP]**
+Regional boxplots confirmed what we suspected: the global median poverty is 2.7%, ASEAN median is 5.4%, and the Philippines sits at 5.3%—slightly better than ASEAN average but above the global benchmark.
 
-Interestingly, **GDP per capita** shows only moderate correlation at negative 0.52. This is a critical finding: **education and infrastructure matter more than raw economic growth**.
-
-**[Explain interpretation]**
-
-What this means practically: you can have a rich country with high inequality and persistent poverty—like Nigeria with oil wealth—or a modest-income country with low poverty if growth is inclusive and invested in education and infrastructure—like Vietnam.
-
-**[Key policy implication]**
-
-The policy implication is clear: governments should prioritize **schools and basic services**, not just chase GDP growth numbers.
-
-**[Transition]** Let's dive deeper into the education relationship.
+These exploratory findings guided our final analysis.
 
 ---
 
-## SLIDE 10: Visualization 5 - Education vs. Poverty (45 seconds)
+## SLIDE 8: Global Poverty Landscape (50 seconds)
 
-**[Describe the scatter plot]**
+**[Show choropleth map results]**
 
-This scatter plot shows the relationship between primary school enrollment and poverty. Each bubble is a country—size represents population, colors represent regions.
+Now let's examine our first major finding: the global poverty landscape.
 
-**[Point to trendline]**
+Our choropleth map visualization reveals that 169 countries have poverty data, while 48 lack measurements. The global median poverty rate is 2.7%, but the mean is 14%—showing the distribution is skewed by high-poverty outliers.
 
-The trendline clearly slopes downward. Statistically, each **1% increase in enrollment** is associated with a **0.83% decrease in poverty**. Education explains **61% of the variance** in poverty rates—that's huge.
+The geographic patterns are striking: Sub-Saharan Africa shows the highest concentrations, with many countries above 40% poverty. East Asia demonstrates remarkable success stories—China and Vietnam are now below 1%. Latin America shows moderate rates between 5-15%, while Europe and North America have achieved near-zero extreme poverty.
 
-**[Highlight examples]**
+Most importantly, the historical trend is dramatic: in 1981, global average poverty was 17.22%. By 2024, it had fallen to just 4.23%—a reduction of nearly 13 percentage points over 43 years.
 
-Look at **Vietnam**—95% enrollment, only 1.3% poverty. Compare that to **Nigeria**—68% enrollment, 39% poverty. The pattern is unmistakable.
-
-**[Note interactivity]**
-
-The animated version shows this relationship strengthening over time as more countries invested in education.
-
-**[Transition]** Now let's look at specific country stories.
+This proves poverty reduction is achievable, but the uneven distribution shows the challenge isn't solved everywhere.
 
 ---
 
-## SLIDE 11: Success Stories vs. Challenges (1 minute)
+## SLIDE 9: ASEAN Regional Analysis (50 seconds)
 
-**[Overview the small multiples]**
+**[Display ASEAN table and trends]**
 
-These small charts show poverty trends for the 10 most populous countries—representing over half of humanity.
+Zooming into our region, the ASEAN picture shows remarkable diversity.
 
-**[Point to success stories]**
+Of the 11 ASEAN member states, only 7 have poverty data. Among these, the spread is enormous: Malaysia and Thailand have achieved zero extreme poverty—a remarkable accomplishment. The Philippines sits at 5.3%, just below Indonesia at 5.4%. Myanmar is at 10.3%, Lao PDR at 15.7%, and Timor-Leste faces severe challenges at 43.9%.
 
-The success stories are remarkable:
-- **China**: 66% to 0.5%—essentially eliminated extreme poverty
-- **Indonesia**: 54% to 3%—a 94% reduction
-- **Vietnam**: 58% to 1%—stunning achievement
-- **India**: 45% to 10%—still work to do, but massive progress
-- **Bangladesh**: 43% to 13%—steady improvement
+The ASEAN median of 5.4% is notably higher than the global median of 2.7%. This suggests our region, despite strong economic growth, still has work to do on poverty reduction.
 
-**[Point to challenges]**
+For the Philippines specifically, the 5.3% rate is encouraging—we're performing slightly better than the regional median. However, the existence of zero-poverty ASEAN neighbors like Malaysia and Thailand proves that complete poverty elimination is achievable in our regional context. They provide both inspiration and practical models we can learn from.
 
-But then we have **Nigeria**: only 46% to 39%. Despite being Africa's largest economy and an oil exporter, poverty persists. Why? Inequality, corruption, and underinvestment in education and infrastructure.
-
-**[Key lesson]**
-
-The lesson: **political will and inclusive policies matter**. It's not about natural resources or starting conditions—it's about choices governments make.
-
-**[Transition]** Let's take a holistic view of regional development.
+The question becomes: what did they do differently?
 
 ---
 
-## SLIDE 12: Multi-Dimensional Development Assessment (45 seconds)
+## SLIDE 10: What Drives Poverty Reduction? (1 minute)
 
-**[Explain radar chart]**
+**[Show correlation matrix results]**
 
-This radar chart compares regions across six dimensions simultaneously. The larger the polygon, the better the overall development.
+This slide presents perhaps our most important finding: what actually drives poverty reduction?
 
-**[Point to strong performers]**
+We calculated Pearson correlation coefficients between poverty and three key development indicators using our complete dataset. The results challenge conventional wisdom.
 
-**Europe & Central Asia** has a large, balanced pentagon—strong on all dimensions. **East Asia** is similar, though slightly weaker on life expectancy due to rapid aging.
+**Electricity access** shows a correlation of minus 0.847 with poverty—that's very strong and highly statistically significant.
 
-**[Point to Sub-Saharan Africa]**
+**Life expectancy** correlates at minus 0.786—also very strong.
 
-**Sub-Saharan Africa** has the smallest polygon, scoring low on everything: poverty reduction, education, infrastructure. The scores are in the 20-40 range while others are 80-95.
+But here's the surprise: **GDP per capita** correlates at only minus 0.397—less than half the strength of infrastructure access.
 
-**[Policy implication]**
+What does this mean practically? Infrastructure access matters **more than twice as much** as income growth for poverty reduction. This is a critical insight that challenges the traditional "grow the economy and poverty will follow" approach.
 
-This visualization shows that Africa doesn't need just one intervention—it needs **comprehensive, simultaneous investment** across education, health, and infrastructure. No silver bullet exists.
+The health connection at minus 0.786 tells us that healthy populations escape poverty faster—perhaps because health enables work, education, and economic participation.
 
-**[Transition]** Now I'd like to show you the interactive dashboard briefly.
-
----
-
-## SLIDE 13: Dashboard Demo (1 minute)
-
-**[If live demo works]**
-
-I've built an interactive web dashboard that lets you explore this data dynamically.
-
-**[Demonstrate key features quickly]**
-
-- **Filters**: Select specific regions or adjust the year range
-- **KPI cards**: Show current global statistics
-- **Interactive map**: Updates in real-time based on your selections
-- **Time series**: Compare regional trends
-- **Scatter plot**: Choose any indicator for the X-axis to explore different correlations
-
-**[Mention accessibility]**
-
-After installation, anyone can run this locally by typing `python src/dashboard.py`. All code is documented and reproducible.
-
-**[If demo doesn't work]**
-
-I've prepared an interactive dashboard—shown here in screenshots—that allows users to filter by region, adjust time ranges, and explore different indicator correlations dynamically. The full version is available in the project repository.
-
-**[Transition]** Let me summarize the key insights.
+The takeaway is clear: successful poverty reduction requires a multi-dimensional approach. You can't just grow GDP and hope poverty decreases. You need simultaneous progress in infrastructure access, health systems, AND economic growth. Countries that succeed—like Malaysia and Thailand—invested in all three simultaneously.
 
 ---
 
-## SLIDE 14: Key Insights & Findings (1 minute)
+## SLIDE 11: Philippines in Context (45 seconds)
 
-**[Structure: achievements, challenges, success factors]**
+**[Display radar chart]**
 
-**Major Achievements:**
-- **1.2 billion people** lifted from poverty since 1990
-- A **75% reduction** in the global poverty rate
-- **East Asia proved** it's possible—from 47% to 2% in one generation
+So where does the Philippines fit in this multi-dimensional landscape?
 
-**Persistent Challenges:**
-- **Sub-Saharan Africa** now has 60% of the world's extreme poor
-- **Conflict devastates** progress—Syria, Yemen, Haiti saw poverty spike
-- **COVID-19** temporarily reversed progress, pushing 70 million back
+Our radar chart compares the Philippines against the ASEAN average across six development dimensions, with all values normalized to a 0-1 scale for fair comparison.
 
-**Critical Success Factors** we identified:
-1. **Education** is paramount—strongest correlation at negative 0.78
-2. **Infrastructure** enables everything—electricity, water, sanitation
-3. **Inclusive growth** matters more than GDP growth alone
-4. **Peace and stability**—conflict undermines all other progress
+The Philippines shows a **balanced development profile**. We're comparable to ASEAN average across most indicators. Our strength is in infrastructure, particularly electricity access. Education enrollment rates track closely with regional averages. We're neither a leader nor a laggard—we're right in the middle.
 
-**[Address the 2030 target]**
+At 5.3% poverty in 2023, we're slightly below the ASEAN median of 5.4%, which is positive. However, we remain above the global median of 2.7%.
 
-Now, the tough question: **Will we meet the 2030 goal** of ending extreme poverty?
+The critical insight here: the Philippines has the **foundation** for success. Our development indicators are balanced and comparable to the region. We have clear role models in Malaysia and Thailand who achieved zero poverty with similar starting points. The infrastructure correlation we identified shows us where to focus effort.
 
-**[Pause for effect]**
+The path to 0% poverty isn't theoretical—our neighbors proved it's possible.
 
-Based on current trajectories: **unlikely**. We're on track for about 7% poverty in 2030, not the near-zero target. We'd need to **triple our reduction rate**—from 0.3 to 1.3 percentage points per year. Possible, but requires dramatic acceleration.
+---
 
-**[Transition]** So what should we do?
+## SLIDE 12: Philippines Deep Dive (45 seconds)
+
+**[Reference interactive dashboard]**
+
+Our interactive dashboard provides a four-panel deep dive into Philippine development trends over time.
+
+The **poverty panel** shows a declining trajectory over recent decades, but with recent stabilization around 5%. This plateau is worth investigating.
+
+The **economic panel** reveals steady GDP per capita growth—our economy has been expanding consistently.
+
+The **education panel** shows high primary enrollment above 95%, with secondary enrollment steadily improving.
+
+The **infrastructure panel** demonstrates expanding electricity access, which aligns with our correlation finding about infrastructure's importance.
+
+But here's the puzzle this dashboard reveals: Why hasn't our steady GDP growth translated to faster poverty reduction? Indonesia, a similar ASEAN neighbor, achieved an 80.8% poverty reduction. Vietnam, though data is missing in our dataset, is known to have dropped from 50% to under 2%.
+
+This suggests that while our economic growth is real, it may not be **inclusive** enough—the benefits aren't reaching the bottom 5.3% as effectively as they could. This points to distribution and access issues, not just growth issues.
+
+---
+
+## SLIDE 13: Global Progress Tracking (45 seconds)
+
+**[Display success stories and challenges]**
+
+Taking a global view of progress, we categorized 120 countries with sufficient time-series data into three groups:
+
+**54.2%**—65 countries—are **improving**, with greater than 5% poverty reduction. This is the majority, which is encouraging.
+
+**40.8%**—49 countries—are **stable**, with changes within plus or minus 5%.
+
+**5%**—just 6 countries—are **worsening**, with poverty increases greater than 5%.
+
+The top success stories are remarkable: China achieved a 97% poverty reduction—nearly complete elimination. Indonesia, our ASEAN neighbor, achieved 80.8% reduction. Nepal 80.3%, Uzbekistan 77.1%, Guinea 74.7%.
+
+The challenges are concentrated in conflict zones and fragile states: Syria saw a 15.3% increase due to war. Kenya, Malawi, Zambia, and Madagascar also saw increases.
+
+Two insights here: First, the **majority of the world is moving in the right direction**—54% improving is a positive signal. Second, Indonesia's success is particularly relevant for the Philippines. We share similar regional context, development challenges, and starting conditions. If they reduced poverty by 80.8%, what can we learn from their approach?
+
+---
+
+## SLIDE 14: Key Findings Summary (50 seconds)
+
+**[Display four-quadrant summary]**
+
+Let me synthesize our key findings across four dimensions:
+
+**At the GLOBAL level**: Poverty dropped from 17.22% to 4.23% between 1981 and 2024. Over 1 billion people escaped extreme poverty. But 700 million remain, so the job isn't finished.
+
+**Our CRITICAL INSIGHTS** from statistical analysis: Infrastructure access (correlation -0.847) matters more than GDP growth (-0.397) for poverty reduction. Health outcomes matter enormously (correlation -0.786). Success is demonstrably possible—Malaysia, Thailand, and Indonesia proved it. And the majority—54%—of countries are actively improving.
+
+**For the PHILIPPINES specifically**: At 5.3% poverty, we're below ASEAN median but above global median. Our development indicators are balanced—we're not failing in any dimension, but not excelling either. Most importantly, we have a clear path to 0% poverty by following regional models.
+
+**For ASEAN as a region**: The diversity is striking—0% in Malaysia and Thailand versus 43.9% in Timor-Leste. Our regional median of 5.4% exceeds the global median of 2.7%, indicating regional improvement potential.
+
+The overarching conclusion: poverty elimination is not aspirational—it's achievable. But it requires the right approach: infrastructure + health + inclusive growth simultaneously.
 
 ---
 
 ## SLIDE 15: Policy Recommendations (1 minute)
 
-**[Frame as evidence-based]**
+**[Display recommendations]**
 
-Based on our analysis, here are evidence-based recommendations:
+Based on our data-driven analysis, here are evidence-based policy recommendations:
 
-**For Sub-Saharan Africa**—where the challenge is greatest:
+**For the Philippines**, four priorities:
 
-1. **Universal primary education** by 2030. Our data shows education has the strongest impact.
-2. **Accelerate electrification** from 48% to 90%. Electricity enables businesses, healthcare, and study.
-3. **Prioritize conflict resolution** in the 15+ affected countries. Nothing else works without peace.
-4. **Climate adaptation**—drought-resistant crops, early warning systems for the most vulnerable region.
+**First**, accelerate infrastructure investment. Given the strongest correlation at -0.847, this is the highest-impact lever. Expand beyond electricity to include digital infrastructure, transport networks, and water systems. Infrastructure enables economic participation.
 
-**For middle-income countries:**
+**Second**, learn from success stories. Malaysia and Thailand achieved zero poverty—study their strategies systematically. Indonesia reduced poverty by 80.8%—what specific policies drove that? These aren't distant examples; they're ASEAN neighbors with similar contexts.
 
-Focus on **inequality**—progressive taxation and targeted cash transfers. And strengthen **social safety nets**—unemployment insurance, child benefits.
+**Third**, strengthen health systems. The life expectancy correlation of -0.786 tells us health investment pays poverty reduction dividends. Focus on primary healthcare access, particularly in underserved areas.
 
-**For the global community:**
+**Fourth**, move beyond GDP-centric policies. Our data shows GDP correlation is only -0.397—much weaker than infrastructure. This means economic growth alone won't eliminate the remaining 5.3%. We need targeted interventions focused on distribution and access, not just aggregate growth.
 
-**Target aid** to the most fragile states. Provide **debt relief** so countries can invest in social programs. And scale up **climate finance** for vulnerable regions.
+**For the ASEAN region**: Support Timor-Leste, which faces 43.9% poverty, through coordinated regional assistance. Establish a formal best-practice sharing mechanism—Malaysia and Thailand have expertise to share. Improve data collection—4 countries lack poverty measurements, making progress tracking impossible. Address regional inequality—our median of 5.4% should be brought down to global levels of 2.7%.
 
-**[Emphasize evidence]**
-
-These aren't just opinions—they're guided by the statistical correlations and regional comparisons we've seen in the data.
-
-**[Transition]** Let me conclude.
+These aren't theoretical recommendations—they're directly derived from statistical patterns in our data.
 
 ---
 
-## SLIDE 16: Conclusion (1 minute)
+## SLIDE 16: Limitations & Future Work (45 seconds)
 
-**[Start with optimism]**
+**[Display limitations transparently]**
 
-Here's what we've **proven**: Poverty **is solvable**. We lifted 1.2 billion people in 33 years. We know **what works**—education, infrastructure, inclusive growth. And we have **success stories** to learn from: China, Vietnam, Bangladesh.
+In the spirit of scientific rigor, let me acknowledge our limitations and outline future research directions.
 
-**[Acknowledge the challenge]**
+**Data limitations**: 22% of countries lack poverty data entirely. Within ASEAN, only 7 of 11 countries have measurements. The "latest year" approach means we're comparing 2024 data for some countries with 2018 data for others. National-level data masks important sub-national disparities—poverty in Metro Manila versus Mindanao, for example.
 
-But the **last mile will be the hardest**. Those remaining 700 million face structural barriers: conflict, climate change, weak governance, geographic isolation. And our 2030 target is at serious risk.
+**Methodological constraints**: Correlation does not prove causation. While we found strong correlations, we haven't established causal mechanisms. Our analysis is cross-sectional comparison, not panel regression. We're limited to available WDI indicators—important factors like governance quality, corruption, social protection systems aren't captured.
 
-**[Regional reality]**
+**Future research should include**: First, causal analysis using panel regression and instrumental variables to move from correlation to causation. Second, sub-national mapping—where exactly is poverty concentrated within countries? Third, forecasting to project 2030 SDG trajectories. Fourth, multi-dimensional poverty measures beyond just income. Fifth, machine learning to identify poverty risk factors. Sixth, climate vulnerability analysis. And seventh, a specific Vietnam case study to understand their remarkable success.
 
-Regional disparities are widening. While East Asia celebrates near-zero poverty, Sub-Saharan Africa is falling further behind.
-
-**[Role of data visualization]**
-
-**This is where data visualization matters.** It **makes the invisible visible**—patterns, disparities, success stories. It **informs evidence-based policy**—our correlation analysis guides where to invest. It **drives accountability**—dashboards track progress transparently. And compelling visuals **inspire action** and mobilize political will.
-
-**[Final thought - pause before reading]**
-
-I'll leave you with this thought:
-
-> "The question is not whether we **can** end poverty—we've proven we can. The question is whether we **will**—whether we have the political will, the resources, and the commitment to ensure that by 2030, no one lives in extreme poverty."
-
-**[Project summary]**
-
-This project has delivered:
-- Seven polished, publication-quality visualizations
-- An interactive dashboard for ongoing exploration
-- A comprehensive research report in ACM format
-- And fully reproducible code
-
-**[Closing]**
-
-Thank you. I'm happy to take your questions.
+These limitations don't invalidate our findings, but they define the boundaries of what we can confidently claim.
 
 ---
 
-## SLIDE 17: Questions & Discussion
+## SLIDE 17: Conclusion (50 seconds)
 
-**[Display contact slide, wait for questions]**
+**[Display conclusion with key quote]**
 
----
+Let me conclude with the big picture.
 
-## HANDLING Q&A (Anticipated Questions)
+**What we've proven**: Poverty elimination is not aspirational—it's achievable. The data proves this. Infrastructure and health matter more than income growth alone. Regional success stories provide practical roadmaps. And the Philippines has both the foundation and clear examples to follow.
 
-### **Q: Why did you focus on $2.15/day? Isn't that arbitrary?**
+**The 2030 Challenge**: We have 6 years to reach the SDG deadline. Global average is 4.23%—we need near-zero. Philippines at 5.3% has a clear path to 0% based on Malaysia and Thailand models. But 700 million people globally are still waiting.
 
-**A:** Great question. The $2.15 threshold is the World Bank's international poverty line, adjusted for purchasing power parity. It's based on the national poverty lines of the poorest countries. While it's not perfect, it's the global standard that allows cross-country comparison over time. For deeper analysis, we'd want to look at multidimensional poverty indices that include health and education deprivations, which I mention as future work.
+Here's our critical insight, and I'll quote from our analysis: "The question is not WHETHER poverty can be eliminated—the data shows it can—but WHETHER we will summon the political will and resource allocation to complete the journey."
 
-### **Q: You mentioned correlation doesn't equal causation. How confident are you about education causing poverty reduction?**
+For the Philippines specifically, the opportunity is clear: We have balanced development indicators—check. We have regional role models who started where we are—check. We've identified the strongest correlation factors, particularly infrastructure—check. The foundation is set. What's needed now is execution.
 
-**A:** You're right to push on this. Our analysis shows strong correlation, but we can't definitively prove causation with observational data. However, there's extensive experimental and quasi-experimental literature—including randomized controlled trials—that does establish causal links between education and income. Our findings align with that literature. For this project, we're cautious to say "correlates with" rather than "causes," but the weight of evidence is strong.
-
-### **Q: COVID-19 seems to have had less impact than expected. Why?**
-
-**A:** Indeed, initial projections estimated 100+ million would fall into poverty. The actual figure was closer to 70 million, with partial recovery by 2023. The main reasons were unprecedented social protection responses—governments deployed cash transfers, expanded unemployment benefits, and implemented food assistance programs at a scale never seen before. It's a reminder that policy responses matter enormously.
-
-### **Q: What can we as students/individuals do about global poverty?**
-
-**A:** Excellent question. Direct individual actions include supporting effective charities (organizations like GiveDirectly provide cash transfers to the extreme poor). But more impactfully, advocate for evidence-based policies—contact representatives about foreign aid, trade policies, and climate action. As future tech professionals, you can contribute skills: volunteer for data analysis for NGOs, build tools for development organizations, or ensure the technologies you create don't exacerbate inequality. And perhaps most importantly: stay informed and vote for leaders committed to global development.
-
-### **Q: Why didn't Nigeria reduce poverty despite oil wealth?**
-
-**A:** Nigeria is a textbook case of the "resource curse." Despite being Africa's largest economy and a major oil exporter, poverty persists due to several factors: extreme inequality (oil wealth concentrated among elites), corruption that diverts resources from social programs, underinvestment in education and infrastructure, and regional conflicts. It illustrates our finding that GDP growth alone doesn't reduce poverty—inclusive growth with investment in human capital does. Countries like Botswana show it's possible to manage resource wealth well, but it requires strong institutions and governance.
-
-### **Q: Is the dashboard available publicly?**
-
-**A:** Currently it runs locally after installing dependencies (`pip install -r requirements.txt` then `python src/dashboard.py`). For public deployment, I'd need to host it on a platform like Heroku or Streamlit Cloud. The full code is in my GitHub repository, so anyone can run it themselves or I can deploy it if there's interest. It's fully open-source.
-
-### **Q: What was the most surprising finding?**
-
-**A:** I'd say two things surprised me: First, how much **stronger** the education correlation was compared to GDP—it really challenges the assumption that economic growth alone solves poverty. Second, the **Sankey diagram** showing that 12 countries actually got worse. Seeing Venezuela and Syria's collapses visualized so clearly was powerful—it shows how fragile progress can be and why peace and governance matter so much.
+The data provides both hope and urgency. Hope because remarkable progress has been achieved and we know what works. Urgency because we're 6 years from the 2030 deadline and 700 million people are counting on us.
 
 ---
 
-## TIMING BREAKDOWN
+## SLIDE 18: Thank You / Q&A (Remaining time)
 
-| Slide | Topic | Time | Cumulative |
-|-------|-------|------|-----------|
-| 1 | Title | 0:30 | 0:30 |
-| 2 | Challenge | 0:45 | 1:15 |
-| 3 | Research Q's | 0:30 | 1:45 |
-| 4 | Data/Methods | 0:45 | 2:30 |
-| 5 | EDA | 0:30 | 3:00 |
-| 6 | Map | 1:00 | 4:00 |
-| 7 | Time Series | 1:00 | 5:00 |
-| 8 | Sankey | 1:00 | 6:00 |
-| 9 | Correlation | 1:00 | 7:00 |
-| 10 | Education | 0:45 | 7:45 |
-| 11 | Countries | 1:00 | 8:45 |
-| 12 | Radar | 0:45 | 9:30 |
-| 13 | Dashboard | 1:00 | 10:30 |
-| 14 | Insights | 1:00 | 11:30 |
-| 15 | Recommendations | 1:00 | 12:30 |
-| 16 | Conclusion | 1:00 | 13:30 |
+**[Display final slide with resources]**
 
-**Note:** Total is 13:30 with buffer. For strict 10-minute limit, shorten slides 13-15 by 15-20 seconds each.
+Thank you for your attention. I'm happy to take questions.
+
+**[Prepared Q&A responses below]**
+
+---
+
+## ANTICIPATED Q&A RESPONSES
+
+### Q: "Why is the Philippines' poverty reduction slower than Indonesia's?"
+
+**A:** Great question. While our analysis shows correlation patterns, not causation, we can point to some differences in the data. Indonesia invested heavily in rural infrastructure—electricity, roads, irrigation—starting in the 1990s. They also implemented aggressive rice price stabilization policies that protected rural incomes. Their poverty reduction accelerated dramatically after the 1997 Asian Financial Crisis recovery.
+
+For the Philippines, our GDP growth has been strong, but our correlation analysis suggests it hasn't been as inclusive. The infrastructure correlation of -0.847 suggests Indonesia's infrastructure focus may have been key. Future research with panel regression could establish whether this is causal, but the correlation is suggestive.
+
+---
+
+### Q: "How confident are you in the data given the missing countries?"
+
+**A:** Excellent methodological question. We have 169 of 217 countries with poverty data—that's 78% coverage. More importantly, those 169 countries represent over 95% of the global population. The missing 48 countries are mostly small island nations, microstates, or conflict zones where data collection is infeasible.
+
+For ASEAN specifically, the 7 of 11 coverage is limiting, and I acknowledge that. Missing Vietnam is particularly frustrating given their known success story. However, the 7 we have represent the region's largest economies and populations.
+
+The correlations we calculated used all available data points across years and countries—tens of thousands of observations—so they're statistically robust. But yes, complete coverage would be better, and we documented these gaps transparently in our limitations section.
+
+---
+
+### Q: "What about inequality within countries? Doesn't that matter?"
+
+**A:** Absolutely critical point. Our analysis uses national-level aggregates, which masks within-country inequality. A country can have low average poverty but high inequality and concentrated pockets of extreme poverty.
+
+This is actually a recognized limitation of the $2.15/day extreme poverty line—it measures the bottom but not the distribution. Future work should incorporate Gini coefficients, income quintile shares, and sub-national data.
+
+For the Philippines specifically, we know poverty rates vary dramatically—Metro Manila versus Eastern Visayas versus BARMM. Our national 5.3% masks that variation. A sub-national analysis would be a valuable extension of this work, and the data exists in PSA's Family Income and Expenditure Survey to do it.
+
+---
+
+### Q: "Why did you focus on electricity access when other infrastructure might matter too?"
+
+**A:** We analyzed electricity access because it had the best data coverage in the WDI dataset—most countries report it consistently. But you're absolutely right that other infrastructure matters.
+
+The correlation of -0.847 for electricity is likely a **proxy** for broader infrastructure development. Countries that achieve high electricity access typically also invest in roads, water systems, telecommunications, etc. Electricity is measurable and correlates with this broader bundle.
+
+That said, electricity specifically is foundational—it enables refrigeration for agriculture, lighting for evening study, power for small businesses. It's both directly impactful and indicative of broader infrastructure investment.
+
+Ideally, we'd analyze roads, water, internet access separately, but data coverage is much spottier. Electricity gave us the broadest comparable dataset.
+
+---
+
+### Q: "How do you account for COVID-19's impact on poverty?"
+
+**A:** Important context. The World Bank documented that 2020 saw the first increase in extreme poverty in a generation due to COVID-19—estimates suggested 70-100 million people fell back into poverty.
+
+Our data uses "latest available year" which varies by country—some 2018, some 2023, some 2024. Countries with 2023-2024 data reflect post-COVID recovery to some extent. The Philippines' 5.3% figure is from 2023, so it includes COVID impact and partial recovery.
+
+The 1981 to 2024 trend shows overall dramatic reduction despite COVID. It's a temporary setback in a decades-long positive trajectory. But it does underscore poverty progress fragility—a single shock can reverse years of gains. This argues for social protection systems and economic resilience, not just poverty reduction measures.
+
+---
+
+### Q: "What's the single most important action the Philippines should take?"
+
+**A:** Based purely on our data analysis: **infrastructure investment**, specifically expanding access in the bottom poverty quintile.
+
+The correlation coefficient of -0.847 is remarkably strong for social science. While correlation isn't causation, the magnitude suggests it's worth testing. Targeted infrastructure expansion—electricity, internet, transport—in underserved areas would likely have high poverty reduction impact.
+
+But—and this is crucial—it can't be infrastructure **alone**. The health correlation of -0.786 and the moderate GDP correlation suggest we need simultaneous action: infrastructure + health + inclusive economic policies.
+
+If I had to pick **one** action, it's infrastructure because it's the strongest correlation and it's actionable—we can measure it, track it, and invest in it directly. But holistically, the data argues for a three-pillar approach.
+
+---
+
+### Q: "Are the visualizations available for us to interact with?"
+
+**A:** Yes! All our visualizations are in the `/figures` directory:
+
+- The interactive choropleth map is `viz_01_choropleth.html`—you can open it in any browser and hover over countries
+- The Philippines dashboard is `viz_05_philippines_dashboard.html`—also fully interactive
+- Static visualizations (trends, correlation matrix, radar chart) are PNG files
+- All the code to generate them is in `FINAL_PROJECT.ipynb`
+
+The interactive ones use Plotly, so you can zoom, pan, hover for details. Feel free to explore them—that's the advantage of data viz over static tables.
+
+---
+
+## TIMING CHECKPOINT
+
+**Total presentation time should be approximately:**
+
+- Slides 1-7 (Intro & Methodology): ~5 minutes
+- Slides 8-13 (Results): ~4.5 minutes
+- Slides 14-18 (Findings & Conclusion): ~2.5 minutes
+- **Total: ~12 minutes of content**
+
+For a 10-minute presentation slot, remove Slide 7 (EDA details) and condense Slide 16 (limitations) to save ~1.5 minutes.
 
 ---
 
 ## PRESENTATION TIPS
 
-**Delivery:**
-- **Speak clearly and at moderate pace** (not rushed)
-- **Make eye contact** with audience, not just reading slides
-- **Use hand gestures** to point to charts/data
-- **Pause for emphasis** before key statistics
-- **Show enthusiasm** for the topic—your passion makes it engaging
+**Delivery Notes:**
 
-**Technical:**
-- **Test equipment** beforehand (laptop, projector, clicker)
-- **Have backup** (PDF on USB drive if live dashboard fails)
-- **Practice transitions** between slides (should be smooth)
-- **Time yourself** during rehearsal
+1. **Speak to the data, not the slides** - audience can read; you provide insight
+2. **Use "we" for findings** - shows team collaboration
+3. **Pause after key statistics** - let numbers sink in (e.g., "17.22% to 4.23%... pause... that's over a billion people")
+4. **Point to visualizations** - "As you can see on the choropleth map..." (if displaying)
+5. **Maintain eye contact** - don't read slides verbatim
+6. **End strong** - the closing quote is powerful; deliver it with conviction
 
-**Handling Nerves:**
-- **Deep breaths** before starting
-- **Know your first 2-3 sentences by heart** (confident start sets tone)
-- **Remember: you know this material better than anyone in the room**
-- **If you lose place, glance at slide title** to reorient
+**If running over time:**
 
-**Interactive Elements:**
-- If doing **live demo**, have it **pre-loaded** and ready
-- If demo fails, **don't panic**—refer to screenshots and move on
-- **Invite questions** at natural break points if time allows
+- Skip Slide 7 (EDA) - it's setup, not findings
+- Condense Slide 16 (limitations) to 20 seconds
+- Tighten Q&A responses to 30 seconds each
+
+**If running under time:**
+
+- Expand Slide 12 (Philippines dashboard) with more detailed interpretation
+- Add personal reflection in conclusion about Philippines' potential
+- During Q&A, volunteer to discuss methodology in more depth
 
 ---
 
-## GOOD LUCK!
-
-You've done the hard work of analysis and visualization. Now just share what you've learned clearly and confidently. The data tells a powerful story—let it shine through!
-
+**END OF PRESENTATION SCRIPT**

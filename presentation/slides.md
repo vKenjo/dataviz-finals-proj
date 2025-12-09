@@ -1,542 +1,504 @@
-# SDG 1: No Poverty - Presentation Slides
-## Visualizing Global Poverty Trends and Development Indicators (1990-2023)
+# Visualizing Global Poverty Trends
+
+## An Analysis of SDG 1 Progress with Focus on the Philippines and ASEAN
+
+**CS ELEC 3C - Data Visualization Project**  
+December 10, 2025
 
 ---
 
 ## Slide 1: Title Slide
 
-**SDG 1: NO POVERTY**
-### Visualizing Global Poverty Trends and Development Indicators
-#### A Comprehensive Data Analysis (1990-2023)
+# Visualizing Global Poverty Trends
 
-**Presenter:** [Your Name]  
-**Course:** CS ELEC 3C - Data Visualization  
-**Date:** December 10, 2025  
-**Institution:** [Your University]
+## Addressing UN SDG 1: No Poverty
+
+### Focus: Philippines and ASEAN Region
+
+**World Development Indicators Analysis (1960-2024)**
+
+CS ELEC 3C Data Visualization Project  
+December 10, 2025
 
 ---
 
 ## Slide 2: The Global Poverty Challenge
 
-### Why This Matters
+### UN SDG 1: End Poverty in All Forms by 2030
 
-**Current State:**
-- 🌍 **700 million** people live in extreme poverty (<$2.15/day)
-- 📊 **9%** of global population (down from 36% in 1990)
-- 🎯 **UN SDG 1:** End poverty by 2030
+**Current Status (2023):**
 
-**Impact of Poverty:**
-- Lower life expectancy (20+ years difference)
-- Reduced educational attainment
-- Poor health outcomes
-- Limited economic opportunity
-- Intergenerational poverty cycles
+- ~700 million people live in extreme poverty
+- ~9% of global population
+- Living on <$2.15/day (2017 PPP)
 
-**Key Visual:** World map showing poverty concentration in Sub-Saharan Africa
+**Historic Achievement:**
 
-**Figure Reference:** `../figures/viz_01_choropleth_static.png`
+- **1990:** 36% in extreme poverty
+- **2023:** 9% in extreme poverty
+- **Result:** Over 1.2 billion people lifted from poverty
+
+**But progress is uneven...**
 
 ---
 
 ## Slide 3: Research Questions
 
-### What We Want to Understand
+### Three-Tier Analysis Framework
 
-1. **Temporal Trends**  
-   How has poverty evolved across regions (1990-2023)?
+**🌍 GLOBAL LEVEL**
 
-2. **Regional Disparities**  
-   Which regions succeeded vs. struggled?
+- How has extreme poverty evolved globally (1981-2024)?
+- What are geographic patterns and regional disparities?
+- Which development indicators correlate with poverty reduction?
 
-3. **Development Correlates**  
-   What factors most strongly correlate with poverty reduction?
+**🌏 ASEAN REGIONAL**
 
-4. **Country Transitions**  
-   How did countries move between poverty categories?
+- How does Philippines compare to other ASEAN countries?
+- Which ASEAN countries have been most successful?
+- Where does ASEAN stand relative to global trends?
 
-5. **Future Prospects**  
-   Will we meet the 2030 SDG targets?
+**🇵🇭 PHILIPPINES SPECIFIC**
+
+- What is Philippines' current poverty status?
+- How does it perform across development dimensions?
+- What factors show strongest correlation with poverty?
 
 ---
 
-## Slide 4: Data & Methodology
+## Slide 4: Dataset Overview
 
 ### World Development Indicators (WDI)
 
-**Source:** World Bank Open Data  
-**Coverage:** 200+ countries, 1990-2023  
-**Total Indicators:** 12 selected from 1,400+ available
+**Source:** World Bank Open Data
 
-**Key Indicators:**
-| Dimension | Indicators |
-|-----------|-----------|
-| **Poverty** | Headcount ratio at $2.15/day |
-| **Education** | Primary enrollment, literacy, secondary enrollment |
-| **Health** | Life expectancy, maternal mortality |
-| **Infrastructure** | Electricity, water, sanitation access |
-| **Economic** | GDP per capita, unemployment rate |
+**Coverage:**
 
-**Data Processing:**
-- Removed 45 regional aggregates
-- Interpolated short gaps (≤3 years)
-- Excluded countries with >50% missing poverty data
-- Final dataset: 150+ countries, 33 years
+- **217 countries** and territories
+- **1960-2024** (65 years)
+- **Over 1,000 indicators** (education, health, economy, infrastructure)
 
-**Figure Reference:** `../tables/missing_data_summary.csv`
+**Our Analysis Uses:**
 
----
+- Poverty headcount at $2.15/day (%)
+- GDP per capita, Life expectancy
+- Electricity access, School enrollment
+- Population demographics
 
-## Slide 5: Exploratory Analysis - Distributions
+**Data Reality:**
 
-### Understanding the Data
-
-**Left Panel:** Current Poverty Distribution (2023)
-- Right-skewed distribution
-- Mean: 12.3% | Median: 6.8%
-- Most countries < 20%, but outliers reach 70%+
-
-**Right Panel:** Regional Comparison (Box Plots)
-- Sub-Saharan Africa: Highest median (22%)
-- East Asia & Pacific: Lowest median (<3%)
-- Large variability in SSA, LAC
-
-**Key Insight:** Most progress made, but challenges concentrated in specific regions
-
-**Figure Reference:** 
-- `../figures/eda_01_poverty_distribution.png`
-- `../figures/eda_02_regional_boxplot.png`
+- 169 countries have poverty data
+- 48 countries lack measurements
+- Latest year varies: 2018-2024
 
 ---
 
-## Slide 6: Visualization 1 - Global Poverty Map
+## Slide 5: Methodology - Data Preparation
 
-### Geographic Distribution of Poverty (2023)
+### From Raw Data to Insights
 
-**Interactive Choropleth Map**
-- Color scale: Red (high poverty) → Green (low poverty)
-- Range: 0-50% poverty rate
-- Hover: Country name, exact rate, population in poverty
+**1. Data Import & Filtering**
+
+- Selected 13 key development indicators
+- Filtered 217 countries across 65 years
+- Focused on poverty headcount as primary metric
+
+**2. Handling Missing Data**
+
+- Documented gaps (48 countries without poverty data)
+- Used "latest available year" approach
+- ASEAN: Only 7 of 11 countries have data
+
+**3. Regional Categorization**
+
+- ASEAN countries (11 members)
+- Developed nations comparison
+- Global benchmarking
+
+**4. Analysis Techniques**
+
+- Correlation analysis (Pearson r)
+- Time-series trend analysis
+- Multi-dimensional comparison
+
+---
+
+## Slide 6: Methodology - Visualizations Created
+
+### 5 Publication-Quality Visualizations
+
+**1. Interactive Choropleth Map**
+
+- Global poverty distribution (169 countries)
+- Latest available year per country
+
+**2. Time-Series Line Chart**
+
+- ASEAN poverty trends over time
+- Philippines highlighted vs. regional average
+
+**3. Correlation Heatmap**
+
+- Poverty vs. development indicators
+- Statistical significance testing
+
+**4. Radar Chart**
+
+- Philippines vs. ASEAN multi-dimensional profile
+- 6 development dimensions normalized
+
+**5. Interactive Dashboard**
+
+- Philippines deep-dive: poverty, GDP, education, infrastructure
+- Temporal evolution across 4 panels
+
+---
+
+## Slide 7: Exploratory Data Analysis (EDA)
+
+### Understanding the Data Landscape
+
+**Distribution Analysis (4 Histograms):**
+
+- Poverty, GDP, Life Expectancy, Electricity Access
+- Global vs. ASEAN vs. Philippines positioning
 
 **Key Observations:**
-- ✅ **Success:** East Asia almost entirely green (<5%)
-- ✅ **Progress:** South Asia mostly yellow-green (5-15%)
-- ⚠️ **Challenge:** Sub-Saharan Africa predominantly red (>20%)
-- 📍 **Hotspots:** Madagascar, Mozambique, Burundi >40%
 
-**Interactive Feature:** Time slider shows 1990→2023 transformation
+- High global variance (0% to 85%+ poverty)
+- Philippines near ASEAN median
+- Infrastructure shows inverse relationship with poverty
 
-**Figure Reference:** `../figures/viz_01_choropleth_static.png`  
-**Interactive Version:** `../figures/viz_01_choropleth_interactive.html`
+**Temporal Heatmap:**
 
----
+- 15 countries (ASEAN prioritized)
+- Poverty evolution 1981-2024
+- Clear reduction patterns visible
 
-## Slide 7: Visualization 2 - Regional Trends Over Time
+**Regional Boxplots:**
 
-### 33 Years of Progress and Challenges
-
-**Multi-Line Time Series Chart**
-
-**Dramatic Reductions:**
-- 🇨🇳 **East Asia & Pacific:** 47% → 2% (95.7% reduction)
-  - Driven by China, Vietnam, Indonesia
-- 🇮🇳 **South Asia:** 44% → 8% (81.8% reduction)
-  - India, Bangladesh success stories
-
-**Slower Progress:**
-- 🌍 **Sub-Saharan Africa:** 54% → 35% (35.2% reduction)
-  - Population growth offset gains
-  - Conflict, climate challenges
-
-**Inflection Points:**
-- 📉 2008: Financial crisis (temporary slowdown)
-- 📉 2020: COVID-19 (70M pushed back into poverty)
-
-**Figure Reference:** `../figures/viz_02_time_series_static.png`
+- Global median: 2.7%
+- ASEAN median: 5.4%
+- Philippines: 5.3%
 
 ---
 
-## Slide 8: Visualization 3 - Sankey Diagram
+## Slide 8: Global Poverty Landscape 🌍
 
-### How Countries Transitioned Between Poverty Categories
+### Visualization 1: Choropleth Map Results
 
-**Poverty Categories:**
-- **Extreme:** ≥40% poverty rate
-- **High:** 20-40%
-- **Moderate:** 10-20%
-- **Low:** <10%
+**Data Coverage:**
 
-**Transition Analysis (1990 → 2023):**
+- ✅ 169 countries with poverty data
+- ❌ 48 countries without measurements
 
-**Positive Flows (Green):**
-- ✅ **78 countries** moved to lower categories
-- 🏆 Largest flow: Moderate → Low (42 countries)
-- 🌟 Success: 32 countries escaped Extreme category
+**Global Statistics (Latest Available Year):**
 
-**Negative Flows (Red):**
-- ⚠️ **12 countries** deteriorated
-- Examples: Venezuela (Low → High), Syria (Moderate → Extreme)
+- **Median poverty:** 2.70%
+- **Mean poverty:** 14.03%
+- **Range:** 0% (developed nations) to 85%+ (Sub-Saharan Africa)
 
-**Stagnant (Gray):**
-- 😔 **18 countries** remain in Extreme (14 in Sub-Saharan Africa)
+**Geographic Patterns:**
 
-**Figure Reference:** `../figures/viz_03_sankey_static.png`
+- 🔴 **Sub-Saharan Africa:** Highest concentrations (>40%)
+- 🟢 **East Asia:** Success stories (China, Vietnam <1%)
+- 🟡 **Latin America:** Moderate (5-15%)
+- 🟢 **Europe & North America:** Near-zero (<2%)
 
----
+**Historical Trend:**
 
-## Slide 9: Visualization 4 - What Correlates with Poverty Reduction?
-
-### Statistical Analysis: Development Indicators
-
-**Correlation Heatmap Results:**
-
-| Indicator | Correlation (r) | Strength |
-|-----------|----------------|----------|
-| 📚 **Primary School Enrollment** | **-0.78** | Very Strong |
-| ⚡ **Electricity Access** | **-0.76** | Very Strong |
-| 🏥 **Life Expectancy** | **-0.68** | Strong |
-| 💧 **Water Access** | **-0.65** | Strong |
-| 💰 **GDP per Capita** | -0.52 | Moderate |
-| 📈 **Unemployment Rate** | +0.34 | Weak Positive |
-
-**Key Insight:**  
-🎓 **Education and infrastructure** show stronger correlation than raw economic growth  
-→ **How** growth happens matters more than growth rate alone
-
-**Implication:** Invest in schools and basic services, not just GDP growth
-
-**Figure Reference:** `../figures/viz_04_correlation_static.png`
+- **1981:** 17.22% average → **2024:** 4.23% average
+- **Reduction:** 12.99 percentage points over 43 years
 
 ---
 
-## Slide 10: Visualization 5 - Education vs. Poverty
+## Slide 9: ASEAN Regional Analysis 🌏
 
-### The Power of Education
+### Visualization 2: ASEAN Poverty Trends
 
-**Animated Scatter Plot: Primary Enrollment vs. Poverty Rate**
-- **Each bubble** = One country (size = population)
-- **Colors** = Regions
-- **Trendline:** Clear negative relationship
+**ASEAN Poverty Rates (Latest Available):**
 
-**Statistical Evidence (2023 data):**
-- **Slope:** -0.83 (1% ↑ enrollment → 0.83% ↓ poverty)
-- **R²:** 0.61 (education explains 61% of poverty variance)
-- **Significance:** p < 0.001 (highly significant)
+| Country        | Poverty Rate |
+| -------------- | ------------ |
+| 🟢 Malaysia    | 0.0%         |
+| 🟢 Thailand    | 0.0%         |
+| 🟡 Philippines | **5.3%**     |
+| 🟡 Indonesia   | 5.4%         |
+| 🟠 Myanmar     | 10.3%        |
+| 🟠 Lao PDR     | 15.7%        |
+| 🔴 Timor-Leste | 43.9%        |
 
-**Real-World Examples:**
-- 🇻🇳 **Vietnam:** 95% enrollment, 1.3% poverty
-- 🇧🇩 **Bangladesh:** 98% enrollment, 13% poverty (improved)
-- 🇳🇬 **Nigeria:** 68% enrollment, 39% poverty (lagging)
+**Missing Data:** Cambodia, Vietnam, Singapore, Brunei
 
-**Interactive Feature:** Animation shows 1990→2023 progression
+**Key Findings:**
 
-**Figure Reference:** `../figures/viz_05_scatter_static.png`
-
----
-
-## Slide 11: Success Stories vs. Challenges
-
-### Small Multiples: Top 10 Populous Countries
-
-**Remarkable Success:**
-- 🇨🇳 **China:** 66% → 0.5% (99% reduction, 850M lifted)
-- 🇮🇩 **Indonesia:** 54% → 3% (94% reduction)
-- 🇻🇳 **Vietnam:** 58% → 1% (98% reduction)
-- 🇮🇳 **India:** 45% → 10% (78% reduction)
-- 🇧🇩 **Bangladesh:** 43% → 13% (70% reduction)
-
-**Lagging Progress:**
-- 🇳🇬 **Nigeria:** 46% → 39% (15% reduction)
-  - Despite oil wealth, inequality persists
-- 🇵🇰 **Pakistan:** 38% → 22% (42% reduction)
-  - Slower than regional peers
-
-**Key Lesson:** Political will, inclusive policies, and sustained investment drive results
-
-**Figure Reference:** `../figures/viz_06_small_multiples_static.png`
+- **ASEAN median:** 5.4% (higher than global 2.7%)
+- **Success stories:** Malaysia, Thailand achieved 0%
+- **Philippines:** Slightly below ASEAN median, above global
+- **Wide disparity:** 0% to 43.9% range
 
 ---
 
-## Slide 12: Multi-Dimensional Development Assessment
+## Slide 10: What Drives Poverty Reduction? 📊
 
-### Radar Chart: Regional Holistic Comparison (2023)
+### Visualization 3: Correlation Analysis
 
-**Six Dimensions (Normalized 0-100, higher = better):**
-1. Poverty Reduction (inverted: lower poverty = higher score)
-2. Primary Education Access
-3. Life Expectancy
-4. Electricity Access
-5. Water Access
-6. GDP per Capita
+**Actual Correlation Coefficients (Pearson r):**
 
-**Regional Profiles:**
+| Development Indicator     | Correlation with Poverty |
+| ------------------------- | ------------------------ |
+| ⚡ **Electricity Access** | **r = -0.847\***         |
+| 🏥 **Life Expectancy**    | **r = -0.786\***         |
+| 💰 **GDP per Capita**     | r = -0.397\*\*           |
 
-**Strong All-Around:**
-- 🇪🇺 **Europe & Central Asia:** Balanced pentagon (80-95 on all dimensions)
-- 🇨🇳 **East Asia & Pacific:** High scores across the board
+**\*p < 0.001, **p < 0.01\*
 
-**Moderate:**
-- 🌎 **Latin America:** Strong on electricity, weaker on poverty/education
-- 🇸🇦 **Middle East & North Africa:** Good infrastructure, moderate poverty
+### 🔑 Critical Insights
 
-**Needs Improvement:**
-- 🌍 **Sub-Saharan Africa:** Low across ALL dimensions (20-40 range)
-  - Weakest: Poverty reduction (22), Electricity (35)
+**1. Infrastructure >> Income**
 
-**Policy Implication:** SSA needs comprehensive, simultaneous interventions
+- Electricity access (r=-0.847) correlates **2x stronger** than GDP (r=-0.397)
+- Access matters more than income growth alone
 
-**Figure Reference:** `../figures/viz_07_radar_static.png`
+**2. Health is Wealth**
 
----
+- Life expectancy (r=-0.786) shows very strong link
+- Healthy populations escape poverty faster
 
-## Slide 13: Dashboard Demo
+**3. Multi-Dimensional Approach Required**
 
-### Interactive Exploration Tool
-
-**Live Demonstration:**
-- Web-based dashboard (Plotly Dash)
-- Hosted locally: `http://127.0.0.1:8050`
-
-**Features:**
-1. **Filters:**
-   - Select regions (multi-select dropdown)
-   - Year range slider (1990-2023)
-
-2. **KPI Cards:**
-   - Global poverty rate, total people in poverty
-   - Reduction since 1990, countries analyzed
-
-3. **Interactive Charts:**
-   - **Choropleth map** (updates with filters)
-   - **Time series** (regional trends)
-   - **Bar chart** (current regional comparison)
-   - **Scatter plot** (select X-axis indicator dynamically)
-
-4. **Interactivity:**
-   - Hover for details
-   - Zoom, pan
-   - Download charts as PNG
-
-**Access:** Run `python src/dashboard.py` after installing dependencies
+- No single factor sufficient
+- Simultaneous progress needed: infrastructure + health + economy
 
 ---
 
-## Slide 14: Key Insights & Findings
+## Slide 11: Philippines in Context 🇵🇭
 
-### What We Learned
+### Visualization 4: Multi-Dimensional Comparison
 
-**✅ Major Achievements:**
-1. **1.2 Billion** people lifted from poverty since 1990
-2. **75% reduction** in global poverty rate
-3. **East Asia** proves rapid poverty reduction is possible
+**Philippines vs. ASEAN Average (Radar Chart)**
 
-**⚠️ Persistent Challenges:**
-1. **Sub-Saharan Africa** accounts for 60% of remaining poor
-2. **Conflict** devastates progress (Syria, Yemen, Haiti)
-3. **COVID-19** pushed 70M back temporarily
+**Current Status (2023):**
 
-**🔑 Critical Success Factors:**
-1. **Education** (strongest correlate, r=-0.78)
-2. **Infrastructure** (electricity, water access)
-3. **Inclusive growth** (not just GDP, but equitable distribution)
-4. **Peace & stability** (conflict undermines all progress)
+- **Poverty Rate:** 5.3%
+- **Position:** Slightly below ASEAN median (5.4%)
+- **But:** Above global median (2.7%)
 
-**📉 2030 Outlook:**
-- **Current trajectory:** 7% poverty by 2030
-- **SDG Target:** Near 0%
-- **Gap:** Need 3x faster reduction rate
-- **Verdict:** Unlikely to meet goal without major acceleration
+**Multi-Dimensional Profile:**
+
+- ✅ **Comparable** across most indicators
+- ✅ **Strength:** Infrastructure/electricity access
+- ➡️ **Balanced:** Education enrollment similar to ASEAN
+- ➡️ **Neither leader nor laggard** in region
+
+**Key Takeaway:**
+Philippines has foundation for success—balanced development profile with clear path to Malaysia/Thailand levels (0%)
+
+---
+
+## Slide 12: Philippines Deep Dive 🇵🇭
+
+### Visualization 5: Interactive Dashboard
+
+**Four-Panel Analysis (Poverty, GDP, Education, Infrastructure)**
+
+**Poverty Trend:**
+
+- Declining trajectory over decades
+- Recent stabilization around 5%
+
+**Economic Growth:**
+
+- Steady GDP per capita increase
+- But slower poverty reduction relative to growth
+
+**Education:**
+
+- High primary enrollment (>95%)
+- Secondary enrollment improving
+
+**Infrastructure:**
+
+- Electricity access expanding
+- Strong correlation with poverty reduction
+
+**Critical Question:** Why hasn't GDP growth translated to faster poverty reduction like in Indonesia (-80.8%) or Vietnam?
+
+---
+
+## Slide 13: Global Progress Tracking 📈
+
+### Who's Succeeding? Who's Struggling?
+
+**Progress Categories (120 countries with time-series data):**
+
+- 🟢 **Improving** (>5% reduction): 65 countries (54.2%)
+- 🟡 **Stable** (±5%): 49 countries (40.8%)
+- 🔴 **Worsening** (>5% increase): 6 countries (5.0%)
+
+**🏆 Top 5 Success Stories:**
+
+1. 🇨🇳 China: -97.0% reduction
+2. 🇮🇩 Indonesia: -80.8% reduction _(ASEAN neighbor!)_
+3. 🇳🇵 Nepal: -80.3% reduction
+4. 🇺🇿 Uzbekistan: -77.1% reduction
+5. 🇬🇳 Guinea: -74.7% reduction
+
+**⚠️ Top 5 Challenges:**
+
+1. 🇸🇾 Syria: +15.3% increase (conflict)
+2. 🇰🇪 Kenya: +14.9% increase
+3. 🇲🇼 Malawi: +10.8% increase
+4. 🇿🇲 Zambia: +8.7% increase
+5. 🇲🇬 Madagascar: +7.5% increase
+
+---
+
+## Slide 14: Key Findings Summary
+
+### What the Data Reveals
+
+**🌍 GLOBAL ACHIEVEMENTS**
+
+- ✅ Poverty dropped from 17.22% → 4.23% (1981-2024)
+- ✅ Over 1 billion people lifted from poverty
+- ⚠️ But 700 million still in extreme poverty
+
+**📊 CRITICAL INSIGHTS**
+
+1. **Infrastructure > Income:** Electricity (r=-0.847) beats GDP (r=-0.397)
+2. **Health Matters:** Life expectancy correlation r=-0.786
+3. **Success is Possible:** Malaysia, Thailand, Indonesia prove it
+4. **Majority Improving:** 54% of countries reducing poverty
+
+**🇵🇭 PHILIPPINES POSITION**
+
+- At 5.3%, below ASEAN median but above global
+- Balanced development indicators
+- Clear path to 0% following regional models
+
+**🌏 ASEAN DIVERSITY**
+
+- Wide range: 0% (Malaysia, Thailand) to 43.9% (Timor-Leste)
+- Regional median 5.4% > global median 2.7%
 
 ---
 
 ## Slide 15: Policy Recommendations
 
-### Evidence-Based Actions for 2030
+### Evidence-Based Actions for Impact
 
-**For Sub-Saharan Africa (highest need):**
-1. 🎓 **Universal Primary Education**
-   - Goal: 98% enrollment by 2030
-   - Evidence: r=-0.78 correlation
-2. ⚡ **Electrification Acceleration**
-   - Goal: 90% access (from current 48%)
-   - Enables businesses, study, health services
-3. ☮️ **Conflict Resolution**
-   - Prioritize peace in 15+ affected countries
-4. 🌾 **Climate Adaptation**
-   - Drought-resistant crops, early warning systems
+**🇵🇭 FOR PHILIPPINES**
 
-**For Middle-Income Countries:**
-1. 📊 **Address Inequality**
-   - Progressive taxation, targeted cash transfers
-2. 🏥 **Social Protection**
-   - Unemployment insurance, child benefits
-3. 🌾 **Rural Development**
-   - Reduce urban-rural service gaps
+1. **Accelerate Infrastructure**
+   - Strongest correlation (r=-0.847) with poverty reduction
+   - Expand beyond electricity: digital, transport, water
+2. **Learn from Success Stories**
+   - Study Malaysia, Thailand path to 0%
+   - Adopt Indonesia's strategies (-80.8% reduction)
+3. **Strengthen Health Systems**
+   - Life expectancy correlation (r=-0.786) critical
+   - Invest in primary healthcare access
+4. **Beyond GDP Growth**
+   - Focus on distribution and access, not just income
+   - Targeted interventions for remaining 5.3%
 
-**For Global Community:**
-1. 💵 **Targeted Aid** to fragile states
-2. 💸 **Debt Relief** for fiscal space
-3. 🌍 **Climate Finance** for vulnerable regions
+**🌏 FOR ASEAN REGION**
+
+1. **Support Timor-Leste** (43.9% poverty) with coordinated aid
+2. **Share Best Practices** from Malaysia, Thailand
+3. **Improve Data Collection** (4 countries missing data)
+4. **Address Regional Inequality** (median 5.4% > global 2.7%)
 
 ---
 
-## Slide 16: Conclusion
+## Slide 16: Limitations & Future Work
 
-### The Path Forward
+### What We Know, What We Need
 
-**What We've Proven:**
-- Poverty **IS** solvable (1.2B lifted in 33 years)
-- We know **what works** (education, infrastructure, inclusive growth)
-- Success stories **exist** (China, Vietnam, Bangladesh)
+**📉 DATA LIMITATIONS**
 
-**The Challenge Ahead:**
-- The **last mile is hardest** (those left behind face structural barriers)
-- **2030 target at risk** without dramatic acceleration
-- **Regional disparities** widening (SSA falling behind)
+- 48 countries (22%) lack poverty data
+- ASEAN gaps: Only 7 of 11 countries measured
+- Temporal mismatch: "Latest" = different years (2018-2024)
+- National aggregates mask sub-national disparities
 
-**The Role of Data Visualization:**
-- **Makes invisible visible** (patterns, disparities, successes)
-- **Informs evidence-based policy** (correlation analysis guides investment)
-- **Drives accountability** (dashboards track progress)
-- **Inspires action** (compelling visuals mobilize political will)
+**🔄 METHODOLOGICAL CONSTRAINTS**
 
-**Final Thought:**
-> "The question is not whether we **can** end poverty, but whether we **will**—whether we have the political will, resources, and commitment to ensure that by 2030, no one lives in extreme poverty."
+- Correlation ≠ Causation (need causal analysis)
+- Cross-sectional comparisons, not panel regression
+- Limited to available WDI indicators
 
-**Project Outputs:**
-- 📊 7 polished visualizations (static + interactive)
-- 🖥️ Interactive dashboard
-- 📄 Research report (ACM format)
-- 💻 Full code repository (reproducible)
+**🔬 FUTURE RESEARCH DIRECTIONS**
 
----
-
-## Slide 17: Questions & Discussion
-
-### Thank You!
-
-**Project Repository:**  
-📂 GitHub: [github.com/yourusername/sdg1-poverty-analysis](https://github.com/yourusername/sdg1-poverty-analysis)
-
-**Interactive Dashboard:**  
-🌐 Run locally: `python src/dashboard.py`
-
-**Contact:**  
-📧 your.email@university.edu
-
-**Key Deliverables:**
-- ✅ 8-10 page ACM format report
-- ✅ 7 visualizations (4 EDA + 6 main + 1 dashboard)
-- ✅ Complete Python analysis pipeline
-- ✅ Reproducible code & documentation
-
-**Data Sources:**
-- World Bank World Development Indicators
-- Country metadata (regions, income levels)
-- All data publicly accessible and reproducible
+1. **Causal Analysis:** Panel regression, instrumental variables
+2. **Sub-National Data:** Within-country poverty mapping
+3. **Forecasting:** Project 2030 SDG trajectories
+4. **Multi-Dimensional Poverty:** Beyond income measures
+5. **Machine Learning:** Predict poverty risk factors
+6. **Climate Integration:** Analyze vulnerability to shocks
+7. **Vietnam Case Study:** Obtain alternative data sources
+8. **Policy Effectiveness:** Link specific interventions to outcomes
 
 ---
 
-### Appendix Slides (Backup)
+## Slide 17: Conclusion
 
-#### A1: Data Cleaning Details
+### The Path Forward to SDG 1
 
-**Missing Data Handling:**
-- Total observations: ~500,000 (200 countries × 33 years × 12 indicators)
-- Missing values: 28% overall
-- Strategy:
-  - Interpolation for gaps ≤3 years
-  - Country exclusion if >50% poverty data missing
-  - Final cleaned dataset: 150+ countries
+**✅ WHAT WE'VE PROVEN**
 
-**Table Reference:** `../tables/missing_data_summary.csv`
+- Poverty elimination is **ACHIEVABLE** (not aspirational)
+- Infrastructure + Health > Income growth alone
+- Regional success stories provide roadmaps
+- Philippines has foundation and clear examples to follow
 
----
+**🎯 THE 2030 CHALLENGE**
 
-#### A2: Statistical Methodology
+- Global average 4.23% → Need to reach near-zero
+- Philippines 5.3% → Clear path to 0% exists
+- 700 million people still waiting
+- 6 years remaining to deadline
 
-**Correlation Analysis:**
-- Method: Pearson correlation coefficient
-- Significance testing: p-values calculated
-- Multiple comparison adjustment: Bonferroni correction applied
+**💡 CRITICAL INSIGHT FROM DATA**
 
-**Trend Analysis:**
-- Linear regression for each region
-- Slope = annual poverty change
-- R² values: 0.85-0.95 (strong linear trends)
+> "The question is not WHETHER poverty can be eliminated—the data shows it can—but WHETHER we will summon the political will and resource allocation to complete the journey."
 
-**Table Reference:** `../tables/eda_regional_trends.csv`
+**🇵🇭 PHILIPPINES OPPORTUNITY**
 
----
+- Balanced development indicators ✓
+- Regional role models (Malaysia, Thailand) ✓
+- Strong infrastructure correlation identified ✓
+- **Foundation is set—execution is next**
 
-#### A3: Technology Stack
-
-**Programming:**
-- Python 3.8+
-- Jupyter Notebooks (for exploration)
-- Python scripts (for production)
-
-**Libraries:**
-- Data: `pandas`, `numpy`, `wbdata`
-- Visualization: `matplotlib`, `seaborn`, `plotly`
-- Dashboard: `dash`, `dash-bootstrap-components`
-- GIS: `geopandas` (for map data)
-- Statistical: `scipy`, `scikit-learn`
-
-**Reproducibility:**
-- `requirements.txt` for dependencies
-- All code version-controlled (Git)
-- Automated pipeline (`python src/main_analysis.py`)
+**Hope + Urgency = Action**
 
 ---
 
-#### A4: Limitations & Future Work
+## Slide 18: Thank You
 
-**Current Limitations:**
-1. Income poverty only (not multidimensional)
-2. Country-level aggregation (masks within-country inequality)
-3. Correlation, not causation
-4. Data gaps for some countries/years
+# Questions?
 
-**Future Enhancements:**
-1. **Multidimensional Poverty Index (MPI)**
-2. **Machine learning predictions** (forecast 2030)
-3. **Causal inference** (policy evaluation)
-4. **Sub-national analysis** (provinces/states)
-5. **Real-time updates** (automated data refresh)
-6. **Climate integration** (vulnerability analysis)
+**Project Materials:**
 
----
+- 📊 Interactive Dashboard: `viz_05_philippines_dashboard.html`
+- 🗺️ Global Map: `viz_01_choropleth.html`
+- 📈 All Visualizations: `/figures` directory
+- 📄 Full Report: `docs/main.tex` (ACM format)
+- 💻 Code: `FINAL_PROJECT.ipynb`
 
-#### A5: Additional Visualizations Available
+**Data Source:**
+World Bank World Development Indicators  
+https://data.worldbank.org/
 
-**All visualizations in `figures/` directory:**
+**Key Figures to Remember:**
 
-**EDA (Preliminary):**
-- `eda_01_poverty_distribution.png`
-- `eda_02_regional_boxplot.png`
-- `eda_03_time_series_trends.png`
-- `eda_04_correlation_heatmap.png`
-
-**Main (Polished):**
-- `viz_01_choropleth_static.png` + interactive HTML
-- `viz_02_time_series_static.png` + interactive HTML
-- `viz_03_sankey_static.png` + interactive HTML
-- `viz_04_correlation_static.png` + interactive HTML
-- `viz_05_scatter_static.png` + interactive HTML
-- `viz_06_small_multiples_static.png` + interactive HTML
-- `viz_07_radar_static.png` + interactive HTML
-
-**Tables in `tables/` directory:**
-- Summary statistics by region
-- Correlation matrices
-- Missing data analysis
-- Trend coefficients
+- Global: 17.22% → 4.23% (1981-2024)
+- Philippines: 5.3% (2023)
+- Correlation: Electricity r=-0.847, GDP r=-0.397
+- ASEAN: 0% (Malaysia, Thailand) to 43.9% (Timor-Leste)
 
 ---
 
-## END OF PRESENTATION
-
-**Total Slides:** 17 main + 5 backup  
-**Presentation Time:** 10 minutes (main slides only)  
-**Q&A Time:** 5 minutes
-
+**CS ELEC 3C - Data Visualization Project**  
+December 10, 2025
