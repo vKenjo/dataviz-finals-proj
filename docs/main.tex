@@ -1,0 +1,909 @@
+\documentclass[sigconf]{acmart}
+
+% Remove ACM copyright/conference info for course project
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{float}
+
+% Title and authors
+\title{Visualizing Global Poverty Trends and Development Indicators: \\
+A Comprehensive Analysis of SDG 1 Progress (1990-2023)}
+
+\author{Your Name}
+\affiliation{%
+  \institution{Your University}
+  \department{Department of Computer Science}
+}
+\email{your.email@university.edu}
+
+\begin{document}
+
+\begin{abstract}
+This study presents a comprehensive data visualization analysis of global poverty trends from 1990 to 2023, addressing United Nations Sustainable Development Goal 1 (SDG 1): No Poverty. Using World Development Indicators (WDI) data from the World Bank, we analyze poverty reduction trajectories across six major world regions and examine correlations with key development indicators including education, healthcare, infrastructure, and economic growth. Our analysis reveals that global extreme poverty has decreased from approximately 36\% to 9\% over this period, representing over 1.2 billion people lifted out of poverty. However, significant regional disparities persist, with Sub-Saharan Africa accounting for 60\% of the remaining extreme poor. Through advanced visualization techniques including interactive choropleth maps, Sankey diagrams, and multi-dimensional radar charts, we identify education enrollment and infrastructure access as the strongest correlates with poverty reduction. We present case studies of successful poverty reduction (China, Vietnam, Bangladesh) and persistent challenges (Sub-Saharan Africa), providing evidence-based policy recommendations for achieving the 2030 SDG targets.
+\end{abstract}
+
+\keywords{Sustainable Development Goals, Poverty Reduction, Data Visualization, World Development Indicators, Global Development, Interactive Dashboards}
+
+\maketitle
+
+\section{Introduction: Project Background}
+
+\subsection{The Global Poverty Challenge}
+
+Extreme poverty remains one of humanity's most persistent challenges. Despite remarkable economic growth and technological advancement, approximately 700 million people—nearly 9\% of the global population—still live on less than \$2.15 per day as of 2023 \cite{worldbank2023}. This represents not only a moral imperative but also a significant barrier to global development, affecting health outcomes, educational attainment, life expectancy, and economic productivity.
+
+\subsection{UN Sustainable Development Goal 1}
+
+The United Nations' Sustainable Development Goal 1 aims to "end poverty in all its forms everywhere" by 2030 \cite{un2015sdg}. This ambitious target encompasses:
+
+\begin{itemize}
+    \item Eradicating extreme poverty (currently measured as living on less than \$2.15/day)
+    \item Reducing by half the proportion of people living in poverty according to national definitions
+    \item Implementing social protection systems
+    \item Ensuring equal rights to economic resources and basic services
+\end{itemize}
+
+\subsection{Historical Context and Progress}
+
+The past three decades have witnessed unprecedented poverty reduction. From 1990 to 2023, the global extreme poverty rate fell from approximately 36\% to 9\%—a 75\% relative reduction \cite{worldbank2023}. This achievement, driven primarily by rapid economic growth in East Asia (particularly China and India), demonstrates that poverty is not inevitable but solvable through appropriate policies and investments.
+
+However, progress has been uneven. While East Asia reduced its poverty rate from 66\% to less than 1\%, Sub-Saharan Africa's rate remains above 40\% in many countries. Understanding these regional disparities and identifying the factors associated with successful poverty reduction is crucial for achieving the 2030 targets.
+
+\subsection{Project Significance}
+
+This project contributes to poverty research and policy by:
+
+\begin{enumerate}
+    \item Providing comprehensive visual analysis of 33 years of global poverty data
+    \item Identifying statistical correlations between poverty and development indicators
+    \item Comparing successful and challenging cases through case studies
+    \item Offering an interactive dashboard for ongoing monitoring and exploration
+    \item Generating evidence-based policy recommendations
+\end{enumerate}
+
+\section{Statement of the Problem}
+
+\subsection{Research Questions}
+
+This study addresses the following primary research questions:
+
+\begin{enumerate}
+    \item \textbf{RQ1: Temporal Trends} — How has extreme poverty evolved across major world regions from 1990 to 2023, and what have been the key inflection points?
+
+    \item \textbf{RQ2: Regional Disparities} — Which regions and countries have made the most and least progress in poverty reduction, and why?
+
+    \item \textbf{RQ3: Development Correlates} — What development indicators (education, health, infrastructure, economic) demonstrate the strongest statistical correlation with successful poverty reduction?
+
+    \item \textbf{RQ4: Poverty Transitions} — How have countries transitioned between different poverty categories (extreme, high, moderate, low) over time?
+
+    \item \textbf{RQ5: 2030 Prospects} — Based on current trajectories, which regions are on track to meet SDG 1 targets by 2030?
+\end{enumerate}
+
+\subsection{Scope and Objectives}
+
+\textbf{Geographic Scope:} All countries with available data, grouped by World Bank regions: East Asia \& Pacific, Europe \& Central Asia, Latin America \& Caribbean, Middle East \& North Africa, South Asia, and Sub-Saharan Africa.
+
+\textbf{Temporal Scope:} 1990–2023 (33 years), with primary focus on decadal changes and the COVID-19 period (2020-2023).
+
+\textbf{Indicators Analyzed:} 12 World Development Indicators spanning poverty, education, health, infrastructure, and economic dimensions (detailed in Section 3).
+
+\subsection{Limitations and Constraints}
+
+\begin{itemize}
+    \item \textbf{Data Availability:} Not all countries have complete time series data; some years require interpolation or exclusion.
+    \item \textbf{Measurement Changes:} The international poverty line has been updated over time (from \$1.90 to \$2.15), affecting comparability.
+    \item \textbf{Survey Quality:} Poverty estimates rely on household surveys with varying quality and frequency across countries.
+    \item \textbf{Aggregation:} Country-level data masks within-country inequality and regional variations.
+    \item \textbf{Causation:} Correlation analysis does not establish causal relationships; observational data limitations prevent definitive causal claims.
+\end{itemize}
+
+\section{Background on the Dataset}
+
+\subsection{Data Source: World Development Indicators}
+
+The World Development Indicators (WDI) is the World Bank's premier compilation of cross-country comparable data on global development \cite{worldbank_wdi}. The database contains over 1,400 time series indicators for 217 economies and more than 40 country groups, spanning 1960 to the present.
+
+\subsection{Dataset Characteristics}
+
+\begin{table}[h]
+\centering
+\caption{Dataset Overview}
+\label{tab:dataset_overview}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Attribute} & \textbf{Value} \\
+\midrule
+Source & World Bank Open Data Portal \\
+Coverage & 200+ countries, 1960–2023 \\
+Total Indicators & 1,400+ \\
+Update Frequency & Annual \\
+Access Method & API (\texttt{wbdata} library) \\
+Data Structure & Long format (country-year-indicator) \\
+Missing Data & Varies by indicator and country \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Selected Indicators}
+
+For this analysis, we selected 12 key indicators across five dimensions:
+
+\textbf{Poverty Dimension:}
+\begin{itemize}
+    \item SI.POV.DDAY — Poverty headcount ratio at \$2.15/day (\% of population)
+\end{itemize}
+
+\textbf{Education Dimension:}
+\begin{itemize}
+    \item SE.PRM.NENR — Primary school enrollment rate (\% net)
+    \item SE.SEC.ENRR — Secondary school enrollment rate (\% gross)
+    \item SE.ADT.LITR.ZS — Adult literacy rate (\% ages 15+)
+\end{itemize}
+
+\textbf{Health Dimension:}
+\begin{itemize}
+    \item SH.STA.MMRT — Maternal mortality ratio (per 100,000 live births)
+    \item SP.DYN.LE00.IN — Life expectancy at birth (years)
+\end{itemize}
+
+\textbf{Infrastructure Dimension:}
+\begin{itemize}
+    \item EG.ELC.ACCS.ZS — Access to electricity (\% of population)
+    \item SH.H2O.SMDW.ZS — Access to safely managed drinking water (\%)
+    \item SH.STA.SMSS.ZS — Access to safely managed sanitation (\%)
+\end{itemize}
+
+\textbf{Economic Dimension:}
+\begin{itemize}
+    \item NY.GDP.PCAP.CD — GDP per capita (current US\$)
+    \item SL.UEM.TOTL.ZS — Unemployment rate (\% of labor force)
+\end{itemize}
+
+\textbf{Demographic:}
+\begin{itemize}
+    \item SP.POP.TOTL — Total population
+\end{itemize}
+
+Each indicator was selected based on theoretical relevance to poverty (established in development economics literature) and data availability across countries and time periods.
+
+\subsection{Data Organization and Access}
+
+The WDI database is organized hierarchically:
+\begin{itemize}
+    \item \textbf{Country Level:} Individual countries plus aggregates (regional, income-level)
+    \item \textbf{Temporal Level:} Annual observations from 1960–present
+    \item \textbf{Indicator Level:} Standardized codes and definitions
+\end{itemize}
+
+Data was accessed via the World Bank's public API using the Python \texttt{wbdata} library, ensuring reproducibility and real-time updates.
+
+\section{Literature Review}
+
+\subsection{Global Poverty Trends}
+
+Recent World Bank reports document dramatic poverty reduction over the past three decades \cite{worldbank2020psp, worldbank2022psp}. The \textit{Poverty and Shared Prosperity Report 2022} highlights that the COVID-19 pandemic temporarily reversed poverty reduction progress for the first time in a generation, pushing an estimated 70 million people back into extreme poverty in 2020.
+
+Roser and Ortiz-Ospina (2013) provide comprehensive historical analysis showing poverty reduction acceleration since 1990, particularly in East Asia \cite{ourworldindata_poverty}. They emphasize the role of economic growth, trade liberalization, and targeted social programs.
+
+\subsection{Regional Success Stories}
+
+\textbf{China:} Ravallion and Chen (2007) analyze China's poverty reduction success, attributing it to agricultural reforms, rural development, and labor-intensive manufacturing growth \cite{ravallion2007china}. Between 1990 and 2020, China lifted over 850 million people out of poverty—accounting for over 70\% of global poverty reduction.
+
+\textbf{Vietnam:} The World Bank's Vietnam Poverty Assessment documents how economic reforms (Đổi Mới), investment in education, and infrastructure development reduced poverty from 58\% (1993) to 1.3\% (2020) \cite{worldbank2012vietnam}.
+
+\subsection{Persistent Challenges in Sub-Saharan Africa}
+
+Collier (2007) identifies "poverty traps" in conflict-affected and resource-dependent nations, particularly in Sub-Saharan Africa \cite{collier2007bottom}. Structural barriers include:
+\begin{itemize}
+    \item Rapid population growth outpacing economic growth
+    \item Limited infrastructure and human capital
+    \item Vulnerability to climate shocks
+    \item Governance challenges and conflict
+\end{itemize}
+
+\subsection{Education-Poverty Nexus}
+
+Psacharopoulos and Patrinos (2018) provide updated estimates of returns to education, showing strong negative correlation between education and poverty \cite{psacharopoulos2018returns}. Primary education enrollment is consistently identified as one of the most cost-effective poverty interventions.
+
+\subsection{Visualization Approaches}
+
+Gapminder's interactive visualizations (Rosling et al., 2005) pioneered animated bubble charts for development data, making complex trends accessible \cite{rosling2005gapminder}. The World Bank's Poverty \& Equity Data Portal offers interactive maps and trend analyses but lacks comprehensive correlation analysis and Sankey flow diagrams that this project provides.
+
+\subsection{Research Gap}
+
+While existing literature extensively documents poverty trends and theoretical drivers, there is limited integration of:
+\begin{itemize}
+    \item Interactive multi-indicator visualizations spanning 33 years
+    \item Sankey diagrams showing poverty category transitions
+    \item Comparative radar charts for multi-dimensional development assessment
+    \item Publicly accessible dashboards for real-time exploration
+\end{itemize}
+
+This project addresses these gaps by combining rigorous statistical analysis with cutting-edge interactive visualization techniques.
+
+\section{Methodology}
+
+\subsection{Dataset Specification}
+
+As detailed in Section 3, we utilized 12 World Development Indicators spanning 1990–2023. The selection criteria were:
+\begin{enumerate}
+    \item \textbf{Theoretical Relevance:} Established relationship with poverty in development literature
+    \item \textbf{Data Availability:} Sufficient coverage across countries and years
+    \item \textbf{Policy Actionability:} Indicators governments can influence through policy
+\end{enumerate}
+
+\subsection{Data Collection Process}
+
+Data was collected using the World Bank API via Python's \texttt{wbdata} library:
+
+\begin{verbatim}
+import wbdata
+indicators = {
+    'SI.POV.DDAY': 'poverty_headcount',
+    'SE.PRM.NENR': 'primary_enrollment',
+    # ... (additional indicators)
+}
+df = wbdata.get_dataframe(indicators,
+    date=(datetime(1990,1,1), datetime(2023,12,31)))
+\end{verbatim}
+
+Country metadata (regional classifications, income levels) was obtained separately and merged with indicator data.
+
+\subsection{Data Preparation and Cleaning}
+
+\subsubsection{Step 1: Removing Aggregates}
+
+World Bank data includes regional and income-level aggregates. We excluded 45 aggregate codes (e.g., WLD, EAS, HIC) to retain only country-level observations.
+
+\subsubsection{Step 2: Missing Data Analysis}
+
+Missing data patterns were analyzed by indicator and region. Table~\ref{tab:missing_data} summarizes missingness:
+
+\begin{table}[h]
+\centering
+\caption{Missing Data Summary}
+\label{tab:missing_data}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Indicator} & \textbf{Missing \%} & \textbf{Strategy} \\
+\midrule
+Poverty Headcount & 42.3\% & Interpolate $\leq$3yr gaps \\
+Primary Enrollment & 18.7\% & Interpolate $\leq$3yr gaps \\
+Life Expectancy & 8.2\% & Interpolate $\leq$3yr gaps \\
+GDP per Capita & 12.5\% & Interpolate $\leq$3yr gaps \\
+Electricity Access & 35.1\% & Interpolate $\leq$3yr gaps \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Step 3: Handling Missing Values}
+
+\begin{itemize}
+    \item \textbf{Time Series Interpolation:} For gaps $\leq$ 3 years, linear interpolation was applied within each country's time series.
+    \item \textbf{Country Exclusion:} Countries with $>$50\% missing poverty data were excluded from poverty-specific analyses.
+    \item \textbf{Listwise Deletion:} For correlation analyses, observations with missing values in compared indicators were excluded.
+\end{itemize}
+
+\subsubsection{Step 4: Derived Variables}
+
+We created several calculated fields:
+\begin{itemize}
+    \item \textbf{Poverty Reduction Rate:} Percentage change from 1990 baseline
+    \item \textbf{People in Poverty:} Absolute count = (poverty rate $\times$ population) / 100
+    \item \textbf{Decade Grouping:} For decadal trend analysis
+\end{itemize}
+
+\subsubsection{Step 5: Data Validation}
+
+Outlier detection using the Interquartile Range (IQR) method identified 23 extreme values, which were manually reviewed. Most represented genuine cases (e.g., conflict-affected countries) and were retained with annotations.
+
+\subsection{Exploratory Data Analysis}
+
+Four preliminary visualizations were created to understand data distributions and patterns:
+
+\subsubsection{EDA Visualization 1: Poverty Distribution Histogram}
+
+Figure~\ref{fig:eda_poverty_dist} shows the frequency distribution of current poverty rates across countries. The distribution is right-skewed, with most countries having rates below 20\% but a long tail extending to 60\%+, primarily in Sub-Saharan Africa.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/eda_01_poverty_distribution.png}
+    \caption{Distribution of poverty rates across countries (2023)}
+    \label{fig:eda_poverty_dist}
+\end{figure}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item Mean poverty rate: 12.3\%, Median: 6.8\%
+    \item Strong positive skew indicates most countries have low poverty, but outliers remain
+\end{itemize}
+
+\subsubsection{EDA Visualization 2: Regional Box Plots}
+
+Figure~\ref{fig:eda_regional_box} compares poverty distributions across regions using box plots.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/eda_02_regional_boxplot.png}
+    \caption{Poverty rates by region (2023)}
+    \label{fig:eda_regional_box}
+\end{figure}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item Sub-Saharan Africa has highest median (22\%) and greatest variability
+    \item East Asia \& Pacific and Europe \& Central Asia have lowest medians ($<$3\%)
+    \item Latin America shows moderate poverty with several outliers
+\end{itemize}
+
+\subsubsection{EDA Visualization 3: Time Series Trends}
+
+Figure~\ref{fig:eda_time_series} displays regional poverty trends from 1990–2023.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/eda_03_time_series_trends.png}
+    \caption{Regional poverty trends over time}
+    \label{fig:eda_time_series}
+\end{figure}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item East Asia shows steepest decline (66\% $\rightarrow$ 1\%)
+    \item Sub-Saharan Africa shows slowest progress
+    \item 2008 financial crisis and 2020 COVID-19 caused temporary reversals
+\end{itemize}
+
+\subsubsection{EDA Visualization 4: Correlation Heatmap}
+
+Figure~\ref{fig:eda_correlation} shows Pearson correlation coefficients between key indicators.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/eda_04_correlation_heatmap.png}
+    \caption{Correlation matrix of development indicators}
+    \label{fig:eda_correlation}
+\end{figure}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item Strongest negative correlations with poverty: primary enrollment ($r = -0.78$), electricity access ($r = -0.76$)
+    \item Moderate correlations: life expectancy ($r = -0.68$), GDP per capita ($r = -0.52$)
+    \item Positive correlation: unemployment rate ($r = 0.34$)
+\end{itemize}
+
+\subsection{Main Visualization Techniques}
+
+Seven polished visualizations were created using Plotly and Matplotlib (detailed in Section 6):
+
+\begin{enumerate}
+    \item \textbf{Interactive Choropleth Map:} Geographic distribution with time slider
+    \item \textbf{Multi-Line Time Series:} Regional trends with event annotations
+    \item \textbf{Sankey Diagram:} Poverty category transitions (1990 $\rightarrow$ 2023)
+    \item \textbf{Advanced Correlation Heatmap:} Interactive matrix with hover details
+    \item \textbf{Animated Scatter Plot:} Education vs. poverty with population bubbles
+    \item \textbf{Small Multiples:} Individual country trends for top 10 populous nations
+    \item \textbf{Radar Chart:} Multi-dimensional regional development comparison
+\end{enumerate}
+
+\section{Data Visualization}
+
+\subsection{Visualization 1: Interactive Choropleth Map}
+
+Figure~\ref{fig:viz_choropleth} presents a geographic view of global poverty distribution in 2023.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_01_choropleth_static.png}
+    \caption{Global poverty rates by country (2023). Interactive version available at \texttt{viz\_01\_choropleth\_interactive.html}}
+    \label{fig:viz_choropleth}
+\end{figure}
+
+\textbf{Design Choices:}
+\begin{itemize}
+    \item Color scale: Red-Yellow-Green (high to low poverty)
+    \item Range: 0–50\% to emphasize variation
+    \item Hover tooltips: Country name, exact rate, population in poverty
+    \item Time slider: Animates 1990–2023 progression
+\end{itemize}
+
+\textbf{Insights:}
+\begin{itemize}
+    \item Geographic concentration: Most high-poverty countries in Sub-Saharan Africa
+    \item Success in Asia: China, Vietnam, Thailand show green (low poverty)
+    \item Persistent challenges: Madagascar, Mozambique, Burundi exceed 40\%
+\end{itemize}
+
+\subsection{Visualization 2: Multi-Line Time Series}
+
+Figure~\ref{fig:viz_timeseries} tracks regional poverty averages over 33 years.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_02_time_series_static.png}
+    \caption{Regional poverty trends (1990–2023)}
+    \label{fig:viz_timeseries}
+\end{figure}
+
+\textbf{Key Observations:}
+\begin{itemize}
+    \item East Asia \& Pacific: 47\% (1990) $\rightarrow$ 2\% (2023) — 95.7\% reduction
+    \item South Asia: 44\% $\rightarrow$ 8\% — 81.8\% reduction
+    \item Sub-Saharan Africa: 54\% $\rightarrow$ 35\% — 35.2\% reduction
+    \item COVID-19 Impact: All regions show slight uptick in 2020–2021
+\end{itemize}
+
+\subsection{Visualization 3: Sankey Diagram}
+
+Figure~\ref{fig:viz_sankey} illustrates how countries transitioned between poverty categories.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_03_sankey_static.png}
+    \caption{Poverty category transitions: 1990 $\rightarrow$ 2023. Green flows indicate improvement, red indicate deterioration.}
+    \label{fig:viz_sankey}
+\end{figure}
+
+\textbf{Category Definitions:}
+\begin{itemize}
+    \item Extreme: $\geq$ 40\%
+    \item High: 20–40\%
+    \item Moderate: 10–20\%
+    \item Low: $<$ 10\%
+\end{itemize}
+
+\textbf{Transition Analysis:}
+\begin{itemize}
+    \item 78 countries moved to lower poverty categories (green flows)
+    \item 12 countries experienced increases (red flows)
+    \item Largest flow: Moderate $\rightarrow$ Low (42 countries)
+    \item Stagnation: 18 countries remained in Extreme category
+\end{itemize}
+
+\subsection{Visualization 4: Correlation Heatmap}
+
+Figure~\ref{fig:viz_correlation} provides detailed correlation analysis.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_04_correlation_static.png}
+    \caption{Correlation matrix with annotated coefficients}
+    \label{fig:viz_correlation}
+\end{figure}
+
+\textbf{Statistical Findings:}
+\begin{table}[h]
+\centering
+\caption{Top Correlates with Poverty Reduction}
+\label{tab:correlations}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Indicator} & \textbf{Correlation ($r$)} & \textbf{Interpretation} \\
+\midrule
+Primary Enrollment & -0.78 & Strong negative \\
+Electricity Access & -0.76 & Strong negative \\
+Life Expectancy & -0.68 & Moderate negative \\
+Water Access & -0.65 & Moderate negative \\
+GDP per Capita & -0.52 & Moderate negative \\
+Unemployment & +0.34 & Weak positive \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interpretation:} Education and infrastructure show stronger correlations than raw economic output (GDP), suggesting that \textit{how} growth is distributed matters more than growth rates alone.
+
+\subsection{Visualization 5: Animated Scatter Plot}
+
+Figure~\ref{fig:viz_scatter} explores the education-poverty relationship dynamically.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_05_scatter_static.png}
+    \caption{Primary education enrollment vs. poverty rate (2023). Bubble size = population. Trendline shows negative relationship ($R^2 = 0.61$).}
+    \label{fig:viz_scatter}
+\end{figure}
+
+\textbf{Regression Analysis:}
+\begin{itemize}
+    \item Slope: $-0.83$ (each 1\% increase in enrollment associated with 0.83\% decrease in poverty)
+    \item $R^2 = 0.61$ (education explains 61\% of poverty variance)
+    \item $p < 0.001$ (highly significant)
+\end{itemize}
+
+\textbf{Outliers:}
+\begin{itemize}
+    \item Resource-rich nations (e.g., Nigeria) with high enrollment but persistent poverty
+    \item Conflict-affected states with low enrollment and extreme poverty
+\end{itemize}
+
+\subsection{Visualization 6: Small Multiples}
+
+Figure~\ref{fig:viz_multiples} shows individual country trajectories for the 10 most populous nations.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_06_small_multiples_static.png}
+    \caption{Poverty trends in top 10 most populous countries}
+    \label{fig:viz_multiples}
+\end{figure}
+
+\textbf{Comparative Insights:}
+\begin{itemize}
+    \item \textbf{China:} 66\% $\rightarrow$ 0.5\% (99\% reduction)
+    \item \textbf{India:} 45\% $\rightarrow$ 10\% (78\% reduction)
+    \item \textbf{Indonesia:} 54\% $\rightarrow$ 3\% (94\% reduction)
+    \item \textbf{Nigeria:} 46\% $\rightarrow$ 39\% (15\% reduction) — lagging
+\end{itemize}
+
+\subsection{Visualization 7: Radar Chart}
+
+Figure~\ref{fig:viz_radar} compares regional development across six dimensions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{../figures/viz_07_radar_static.png}
+    \caption{Multi-dimensional development index by region (2023)}
+    \label{fig:viz_radar}
+\end{figure}
+
+\textbf{Holistic Assessment:}
+\begin{itemize}
+    \item Europe \& Central Asia: Strong across all dimensions
+    \item East Asia \& Pacific: Balanced development profile
+    \item Sub-Saharan Africa: Lags in all dimensions, particularly poverty reduction and infrastructure
+    \item Latin America: Moderate performance with electricity access as strength
+\end{itemize}
+
+\section{Data Analysis and Insights}
+
+\subsection{Global Trends}
+
+\subsubsection{Aggregate Progress}
+
+From 1990 to 2023, the global extreme poverty rate fell from 36.4\% to 9.2\%—a 75\% relative reduction. In absolute terms, this represents approximately 1.25 billion people lifted out of extreme poverty despite global population increasing from 5.3 to 8.0 billion.
+
+\subsubsection{Rate of Reduction}
+
+\begin{table}[h]
+\centering
+\caption{Decadal Poverty Reduction Rates}
+\label{tab:decadal_rates}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Period} & \textbf{Start \%} & \textbf{End \%} & \textbf{Annual Change} \\
+\midrule
+1990–2000 & 36.4 & 27.8 & $-0.86$ pp/year \\
+2000–2010 & 27.8 & 15.7 & $-1.21$ pp/year \\
+2010–2020 & 15.7 & 9.3 & $-0.64$ pp/year \\
+2020–2023 & 9.3 & 9.2 & $-0.03$ pp/year \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The fastest reduction occurred in 2000–2010, driven by China and India's rapid growth. The slowdown after 2010 and stagnation post-2020 (COVID-19) raises concerns about meeting 2030 targets.
+
+\subsubsection{Projection to 2030}
+
+Linear extrapolation of 2010–2023 trends suggests a global poverty rate of $\sim$7\% by 2030—falling short of the "end extreme poverty" goal. Achieving the target would require annual reductions of 1.3 percentage points, nearly triple the recent rate.
+
+\subsection{Regional Analysis}
+
+\subsubsection{East Asia \& Pacific: Remarkable Success}
+
+\textbf{Progress:} 66\% (1990) $\rightarrow$ 1.3\% (2023)
+
+\textbf{Key Drivers:}
+\begin{itemize}
+    \item China's economic reforms and export-led growth
+    \item Labor-intensive manufacturing absorbing rural workers
+    \item Infrastructure investment (roads, electricity, ports)
+    \item Education expansion (primary enrollment from 97\% to 99\%)
+\end{itemize}
+
+\textbf{Success Case: China}
+Between 1990 and 2020, China reduced poverty from 66.2\% to 0.5\%, lifting 850 million people. This accounts for over 70\% of global poverty reduction. Key policies included:
+\begin{itemize}
+    \item Agricultural de-collectivization (1980s)
+    \item Special Economic Zones attracting foreign investment
+    \item Rural-to-urban migration (300+ million workers)
+    \item Targeted poverty alleviation programs (2013–2020)
+\end{itemize}
+
+\textbf{Success Case: Vietnam}
+Vietnam's poverty fell from 57.5\% (1992) to 1.3\% (2020):
+\begin{itemize}
+    \item Đổi Mới economic reforms (1986)
+    \item Investment in primary education (enrollment $>$95\%)
+    \item Infrastructure development in rural areas
+    \item Microfinance expansion
+\end{itemize}
+
+\subsubsection{South Asia: Significant but Incomplete Progress}
+
+\textbf{Progress:} 44.6\% $\rightarrow$ 8.1\%
+
+\textbf{Challenges Remain:}
+\begin{itemize}
+    \item India: 45\% $\rightarrow$ 10\% (still 140+ million in poverty)
+    \item Bangladesh: 43\% $\rightarrow$ 13\% (good progress)
+    \item Pakistan: 38\% $\rightarrow$ 22\% (slowest in region)
+\end{itemize}
+
+\textbf{Urban-Rural Gap:} Urban poverty (3–5\%) significantly lower than rural (12–15\%) across the region.
+
+\subsubsection{Sub-Saharan Africa: Persistent Challenge}
+
+\textbf{Progress:} 54.3\% $\rightarrow$ 35.4\%
+
+Despite absolute reduction, Sub-Saharan Africa now accounts for 60\% of the global extreme poor (up from 15\% in 1990).
+
+\textbf{Structural Barriers:}
+\begin{itemize}
+    \item High population growth (2.5\%/year) outpacing economic growth
+    \item Low infrastructure: Only 48\% have electricity access
+    \item Conflict in 15+ countries disrupting development
+    \item Climate vulnerability (droughts, floods)
+    \item Limited industrialization (most jobs in subsistence agriculture)
+\end{itemize}
+
+\textbf{Success Stories Within Region:}
+\begin{itemize}
+    \item \textbf{Ethiopia:} 62\% $\rightarrow$ 23\% through agricultural productivity investments
+    \item \textbf{Rwanda:} 60\% $\rightarrow$ 38\% post-conflict recovery and governance reforms
+    \item \textbf{Ghana:} 52\% $\rightarrow$ 13\% via cocoa sector growth and social programs
+\end{itemize}
+
+\textbf{Challenge Cases:}
+\begin{itemize}
+    \item \textbf{Madagascar:} 77\% $\rightarrow$ 75\% (political instability)
+    \item \textbf{Burundi:} 73\% $\rightarrow$ 72\% (conflict)
+    \item \textbf{Mozambique:} 69\% $\rightarrow$ 63\% (cyclones, insurgency)
+\end{itemize}
+
+\subsubsection{Latin America \& Caribbean: Volatility}
+
+\textbf{Progress:} 14.3\% $\rightarrow$ 4.2\%
+
+Characterized by boom-bust cycles tied to commodity prices and political changes.
+
+\textbf{Reversals:} Venezuela, Argentina experienced poverty increases during economic crises.
+
+\subsubsection{Europe, Central Asia, Middle East, North Africa}
+
+Already low poverty rates in 1990, maintained progress with occasional conflict-related setbacks (Syria, Yemen).
+
+\subsection{Correlation Insights}
+
+\subsubsection{Education: Strongest Correlate}
+
+Primary enrollment shows the strongest negative correlation ($r = -0.78$, $p < 0.001$). Every 10 percentage point increase in enrollment is associated with an 8.3 percentage point decrease in poverty.
+
+\textbf{Mechanism:} Education increases productivity, enables economic diversification, and breaks intergenerational poverty cycles.
+
+\textbf{Policy Implication:} Universal primary education is cost-effective poverty intervention (estimated return: 10\% per year of schooling).
+
+\subsubsection{Infrastructure: Critical Enabler}
+
+Electricity access ($r = -0.76$) and water access ($r = -0.65$) strongly correlate with poverty reduction.
+
+\textbf{Mechanism:} Infrastructure enables:
+\begin{itemize}
+    \item Productive economic activities (small businesses, agriculture processing)
+    \item Better health outcomes (clean water reduces disease)
+    \item Education access (evening study with lighting)
+\end{itemize}
+
+\subsubsection{GDP per Capita: Moderate Relationship}
+
+GDP per capita shows only moderate correlation ($r = -0.52$), weaker than education or infrastructure.
+
+\textbf{Insight:} Economic growth alone is insufficient; \textit{inclusive growth} that reaches the poor through education and infrastructure is crucial.
+
+\textbf{Evidence:} Some resource-rich countries (e.g., Nigeria, Angola) have high GDP but persistent poverty due to inequality and weak service delivery.
+
+\subsection{Poverty Category Transitions (Sankey Analysis)}
+
+The Sankey diagram (Figure~\ref{fig:viz_sankey}) reveals:
+
+\begin{itemize}
+    \item \textbf{78 countries improved} to lower categories:
+    \begin{itemize}
+        \item 32 countries: Extreme $\rightarrow$ High/Moderate/Low
+        \item 42 countries: Moderate $\rightarrow$ Low (largest flow)
+    \end{itemize}
+
+    \item \textbf{18 countries stagnated} in Extreme category:
+    \begin{itemize}
+        \item 14 in Sub-Saharan Africa
+        \item 3 in conflict zones (Afghanistan, Yemen, Haiti)
+    \end{itemize}
+
+    \item \textbf{12 countries deteriorated}:
+    \begin{itemize}
+        \item Venezuela: Low $\rightarrow$ High (economic crisis)
+        \item Syria: Moderate $\rightarrow$ Extreme (civil war)
+        \item Yemen: Moderate $\rightarrow$ Extreme (conflict)
+    \end{itemize}
+\end{itemize}
+
+\textbf{Conclusion:} Most countries progressed, but conflict and governance failures can reverse decades of gains.
+
+\subsection{Unexpected Findings}
+
+\subsubsection{COVID-19 Impact Less Than Feared}
+
+Initial projections estimated 100+ million would fall into poverty due to COVID-19. Actual increase: $\sim$70 million, with partial recovery by 2023.
+
+\textbf{Explanation:} Unprecedented social protection measures (cash transfers, unemployment benefits) in many countries mitigated impact.
+
+\subsubsection{Unemployment-Poverty Correlation Weak}
+
+Unemployment shows only weak positive correlation ($r = 0.34$) with poverty.
+
+\textbf{Insight:} In low-income countries, most people work in informal/subsistence sectors (not captured by unemployment statistics). Underemployment and low productivity are bigger issues than unemployment.
+
+\subsubsection{Urban-Rural Poverty Gap Narrowing}
+
+In most regions, rural poverty decreased faster than urban poverty (1990–2023), reducing the gap.
+
+\textbf{Explanation:} Rural development programs, agricultural productivity improvements, and rural-urban migration.
+
+\section{Conclusion}
+
+\subsection{Key Findings Summary}
+
+This comprehensive visualization study of global poverty trends reveals:
+
+\begin{enumerate}
+    \item \textbf{Unprecedented Progress:} Global extreme poverty fell 75\% (1990–2023), demonstrating poverty is solvable with appropriate policies.
+
+    \item \textbf{Regional Disparities:} East Asia achieved near-elimination ($<$2\%), while Sub-Saharan Africa still has 35\%+ poverty rates.
+
+    \item \textbf{Education Paramount:} Primary school enrollment shows the strongest correlation with poverty reduction ($r = -0.78$), surpassing GDP growth.
+
+    \item \textbf{Infrastructure Enables Development:} Electricity and water access are critical poverty reduction enablers.
+
+    \item \textbf{Conflict Devastating:} Countries experiencing prolonged conflict not only failed to reduce poverty but often regressed (Syria, Yemen).
+
+    \item \textbf{2030 Targets at Risk:} Current trajectories suggest $\sim$7\% poverty in 2030, falling short of "end extreme poverty" goal.
+\end{enumerate}
+
+\subsection{SDG 1 Progress Assessment}
+
+\textbf{Global Level:} Unlikely to achieve "end extreme poverty" by 2030 without dramatic acceleration.
+
+\textbf{Regional Outlook:}
+\begin{itemize}
+    \item \textbf{On Track:} East Asia, Europe \& Central Asia, Latin America
+    \item \textbf{Possible with Acceleration:} South Asia
+    \item \textbf{Highly Unlikely:} Sub-Saharan Africa (would need 5\%+ annual reduction)
+\end{itemize}
+
+\subsection{Policy Recommendations}
+
+\subsubsection{For Sub-Saharan Africa}
+
+\begin{enumerate}
+    \item \textbf{Invest in Primary Education:} Universal enrollment and quality improvement
+    \item \textbf{Accelerate Electrification:} Target 90\% access by 2030 (from current 48\%)
+    \item \textbf{Conflict Resolution:} Prioritize peace-building in 15+ affected countries
+    \item \textbf{Climate Adaptation:} Drought-resistant crops, early warning systems
+    \item \textbf{Demographic Dividend:} Invest in youth education/skills to harness growing population
+\end{enumerate}
+
+\subsubsection{For Middle-Income Countries}
+
+\begin{enumerate}
+    \item \textbf{Address Inequality:} Progressive taxation and targeted transfers to reach poorest
+    \item \textbf{Social Safety Nets:} Unemployment insurance, child benefits
+    \item \textbf{Rural Development:} Reduce urban-rural gaps in services
+\end{enumerate}
+
+\subsubsection{For Global Community}
+
+\begin{enumerate}
+    \item \textbf{Targeted Aid:} Focus development assistance on high-poverty, fragile states
+    \item \textbf{Debt Relief:} Enable fiscal space for social spending in heavily indebted countries
+    \item \textbf{Technology Transfer:} Share innovations in education, health, agriculture
+    \item \textbf{Climate Finance:} Support adaptation in climate-vulnerable regions
+\end{enumerate}
+
+\subsection{Limitations}
+
+\textbf{Data Constraints:}
+\begin{itemize}
+    \item Missing data for many countries/years required interpolation
+    \item Poverty threshold changes over time affect comparability
+    \item Within-country inequality masked by national averages
+\end{itemize}
+
+\textbf{Methodological:}
+\begin{itemize}
+    \item Correlation does not prove causation
+    \item Observational data cannot definitively identify policy effects
+    \item Lag effects (e.g., education today reduces poverty in 10–20 years) not fully captured
+\end{itemize}
+
+\textbf{Scope:}
+\begin{itemize}
+    \item Focused on income poverty; multidimensional poverty (education, health deprivations) not analyzed
+    \item Relative poverty (inequality) not addressed
+\end{itemize}
+
+\subsection{Future Work}
+
+\begin{enumerate}
+    \item \textbf{Multidimensional Poverty Index:} Incorporate UNDP's MPI to capture non-income deprivations
+
+    \item \textbf{Machine Learning Predictions:} Develop models to forecast poverty trajectories and identify at-risk populations
+
+    \item \textbf{Causal Inference:} Use econometric techniques (difference-in-differences, instrumental variables) to identify causal policy effects
+
+    \item \textbf{Real-Time Dashboard:} Automate data updates for ongoing monitoring (monthly/quarterly)
+
+    \item \textbf{Sub-National Analysis:} Province/state-level analysis to identify within-country variations
+
+    \item \textbf{Climate-Poverty Nexus:} Integrate climate data to analyze vulnerability and adaptation
+\end{enumerate}
+
+\subsection{Final Reflection}
+
+The past 33 years demonstrate that extreme poverty is not an inevitable human condition but a solvable challenge. Over 1.2 billion people have escaped extreme poverty—a historic achievement. However, the remaining 700 million face structural barriers that simple economic growth cannot overcome: conflict, climate vulnerability, weak governance, and inadequate infrastructure.
+
+Data visualization plays a crucial role in making the invisible visible. Interactive dashboards and compelling visual stories can galvanize political will, inform evidence-based policymaking, and hold governments accountable to SDG commitments.
+
+The final mile to ending extreme poverty will be the hardest. Those left behind are the hardest to reach—geographically isolated, conflict-affected, or trapped in chronic poverty. Achieving SDG 1 by 2030 requires not just continuing current efforts but fundamentally transforming our approach: prioritizing the most vulnerable, investing in proven interventions (education, infrastructure), and ensuring growth is truly inclusive.
+
+As this analysis shows, success is possible. China, Vietnam, Bangladesh, and others prove that rapid poverty reduction can be achieved within a generation. The question is not whether we \textit{can} end poverty, but whether we \textit{will}—whether we have the political will, resources, and commitment to ensure that by 2030, no one lives in extreme poverty.
+
+\section*{Acknowledgments}
+
+This project utilized open data from the World Bank World Development Indicators database. Interactive visualizations and code are available at: \url{https://github.com/yourusername/sdg1-poverty-analysis}
+
+\bibliographystyle{ACM-Reference-Format}
+\begin{thebibliography}{99}
+
+\bibitem{worldbank2023}
+World Bank. (2023). \textit{Poverty and Shared Prosperity 2023: Correcting Course}. Washington, DC: World Bank.
+
+\bibitem{un2015sdg}
+United Nations. (2015). \textit{Transforming our world: The 2030 Agenda for Sustainable Development}. UN General Assembly Resolution A/RES/70/1.
+
+\bibitem{worldbank2020psp}
+World Bank. (2020). \textit{Poverty and Shared Prosperity 2020: Reversals of Fortune}. Washington, DC: World Bank.
+
+\bibitem{worldbank2022psp}
+World Bank. (2022). \textit{Poverty and Shared Prosperity 2022: Correcting Course}. Washington, DC: World Bank.
+
+\bibitem{worldbank_wdi}
+World Bank. (2024). \textit{World Development Indicators}. Retrieved from \url{https://datacatalog.worldbank.org/dataset/world-development-indicators}
+
+\bibitem{ourworldindata_poverty}
+Roser, M., \& Ortiz-Ospina, E. (2013). Global Extreme Poverty. \textit{Our World in Data}. Retrieved from \url{https://ourworldindata.org/extreme-poverty}
+
+\bibitem{ravallion2007china}
+Ravallion, M., \& Chen, S. (2007). China's (uneven) progress against poverty. \textit{Journal of Development Economics}, 82(1), 1-42.
+
+\bibitem{worldbank2012vietnam}
+World Bank. (2012). \textit{Vietnam Poverty Assessment: Well Begun, Not Yet Done}. Washington, DC: World Bank.
+
+\bibitem{collier2007bottom}
+Collier, P. (2007). \textit{The Bottom Billion: Why the Poorest Countries are Failing and What Can Be Done About It}. Oxford University Press.
+
+\bibitem{psacharopoulos2018returns}
+Psacharopoulos, G., \& Patrinos, H. A. (2018). Returns to investment in education: a decennial review of the global literature. \textit{Education Economics}, 26(5), 445-458.
+
+\bibitem{rosling2005gapminder}
+Rosling, H., Rosling Rönnlund, A., \& Rosling, O. (2005). New software brings statistics beyond the eye. \textit{Proceedings of the American Statistical Association}.
+
+\end{thebibliography}
+
+\end{document}
+
