@@ -13,3 +13,4 @@ tabulate
 dash
 dash-bootstrap-components
 scikit-learn
+nbformat
