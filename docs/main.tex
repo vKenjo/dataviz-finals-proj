@@ -30,9 +30,20 @@
 %%
 %% The "author" command and its associated commands are used to define
 %% the authors and their affiliations.
-\author{CS ELEC 3C Data Visualization Project}
+\author{Josh Kenn A. Viray}
+\email{joshkennviray@gmail.com}
 \affiliation{%
-  \institution{December 10, 2025}
+  \institution{University of Santo Tomas}
+  \city{Manila}
+  \country{Philippines}
+}
+
+\author{Jam Meisy F. Tan}
+\email{jammeisytan@gmail.com}
+\affiliation{%
+  \institution{University of Santo Tomas}
+  \city{Manila}
+  \country{Philippines}
 }
 
 %%
@@ -56,458 +67,259 @@ This project analyzes global poverty trends from 1960-2024 using World Developme
 
 \subsection{The Global Poverty Challenge}
 
-Extreme poverty remains one of humanity's most pressing challenges. Despite remarkable economic growth and technological advancement, approximately 700 million people—nearly 9\% of the global population—still live on less than \$2.15 per day as of 2023 \cite{worldbank2023}.
+Extreme poverty remains one of humanity's most pressing challenges. Despite remarkable economic growth and technological advancement over the past several decades, approximately 700 million people—nearly 9\% of the global population—still live on less than \$2.15 per day (2017 PPP) as of 2023. This represents a fundamental denial of human dignity and opportunity, affecting access to basic necessities including adequate nutrition, clean water, healthcare, and education.
 
 \subsection{UN Sustainable Development Goal 1: No Poverty}
 
-The United Nations' Sustainable Development Goal 1 aims to \textbf{``end poverty in all its forms everywhere by 2030''} \cite{un2015sdg}. This ambitious target encompasses:
-
-\begin{itemize}
-\item Eradicating extreme poverty (living on <\$2.15/day)
-\item Reducing poverty by half according to national definitions
-\item Implementing social protection systems
-\item Ensuring equal rights to economic resources and basic services
-\end{itemize}
+The United Nations' Sustainable Development Goal 1, adopted in 2015 as part of the 2030 Agenda for Sustainable Development, aims to end poverty in all its forms everywhere by 2030. This ambitious target goes beyond simply reducing income poverty. The goal encompasses eradicating extreme poverty defined as living on less than \$2.15 per day, reducing by at least half the proportion of people living in poverty according to national definitions, implementing nationally appropriate social protection systems and measures for all including floors, and ensuring that all people have equal rights to economic resources and access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology, and financial services including microfinance.
 
 \subsection{Historical Context}
 
-The past three decades have witnessed unprecedented poverty reduction:
-\begin{itemize}
-\item \textbf{1990:} $\sim$36\% of the global population lived in extreme poverty
-\item \textbf{2023:} $\sim$9\% live in extreme poverty
-\item \textbf{Result:} Over 1.2 billion people lifted out of poverty
-\end{itemize}
+The past three decades have witnessed unprecedented poverty reduction on a scale never before seen in human history. In 1990, approximately 36\% of the global population lived in extreme poverty. By 2023, this figure had declined to approximately 9\%, representing over 1.2 billion people lifted out of extreme poverty. This remarkable achievement demonstrates that poverty reduction is not merely an aspirational goal but an achievable reality when appropriate policies and investments are implemented.
 
-However, progress has been uneven:
-\begin{itemize}
-\item \textbf{East Asia:} Reduced from 66\% to <1\% (driven by China)
-\item \textbf{Sub-Saharan Africa:} Remains above 40\% in many countries
-\end{itemize}
+However, this global progress has been profoundly uneven across geographic regions. East Asia experienced the most dramatic transformation, reducing extreme poverty from 66\% to less than 1\%, driven primarily by China's economic reforms and rapid industrialization. In contrast, Sub-Saharan Africa continues to face substantial challenges, with many countries maintaining poverty rates above 40\%. This geographic disparity in poverty reduction outcomes raises critical questions about what factors enable or hinder progress toward poverty elimination.
 
 \subsection{Project Significance}
 
-This project contributes by:
-\begin{enumerate}
-\item Providing comprehensive visual analysis of 33 years of global poverty data
-\item Identifying correlations between poverty and development indicators
-\item Comparing successful and challenging cases
-\item Generating evidence-based policy recommendations
-\end{enumerate}
+This project contributes to understanding global poverty dynamics through comprehensive visual analysis of World Development Indicators data spanning multiple decades. By examining 217 countries and territories from 1960 to 2024, we provide empirical evidence regarding the relationships between poverty and various development indicators including economic growth, infrastructure access, health outcomes, and education. The analysis employs a three-tier comparative framework examining global patterns, regional dynamics within ASEAN, and specific challenges facing the Philippines. Through rigorous correlation analysis and temporal trend visualization, we identify which development dimensions most strongly associate with successful poverty reduction. These evidence-based insights inform policy recommendations for accelerating progress toward the 2030 SDG deadline, with particular relevance for middle-income countries still struggling with persistent poverty despite overall economic growth.
 
 \section{Statement of the Problem}
 
 \subsection{Primary Research Question}
 
-\textbf{``How has global poverty evolved from 1960-2024, and what is the Philippines' position relative to ASEAN countries and global trends in terms of poverty and development indicators?''}
+How has global poverty evolved from 1960-2024, and what is the Philippines' position relative to ASEAN countries and global trends in terms of poverty and development indicators? This overarching question guides our three-tier analytical framework, examining patterns at global, regional, and country-specific levels to provide both contextual understanding and actionable insights.
 
 \subsection{Specific Research Questions}
 
-\paragraph{Global Level Questions}
-\begin{itemize}
-\item \textbf{RQ1}: How has extreme poverty evolved globally from 1981-2024 across 217 countries?
-\item \textbf{RQ2}: What are the geographic patterns and regional disparities in poverty rates?
-\item \textbf{RQ3}: How do development indicators (GDP per capita, life expectancy, education, infrastructure) correlate with poverty globally?
-\end{itemize}
+At the global level, we investigate how extreme poverty has evolved across 217 countries from 1981-2024, what geographic patterns and regional disparities characterize poverty rates, and how development indicators such as GDP per capita, life expectancy, education enrollment, and infrastructure access correlate with poverty globally. These questions establish the baseline understanding of worldwide poverty dynamics and identify potential drivers of poverty reduction.
 
-\paragraph{ASEAN Regional Questions}
-\begin{itemize}
-\item \textbf{RQ4}: How does the Philippines compare to other ASEAN countries in poverty rates?
-\item \textbf{RQ5}: Which ASEAN countries have been most/least successful in reducing poverty?
-\item \textbf{RQ6}: Where does ASEAN stand relative to global poverty levels?
-\end{itemize}
+At the ASEAN regional level, we examine how the Philippines compares to other member states in poverty rates, which countries have been most or least successful in reducing poverty, and where ASEAN stands relative to global poverty trends. This regional focus provides relevant comparators for the Philippines while accounting for shared geographic, economic, and cultural contexts that differentiate Southeast Asia from other developing regions.
 
-\paragraph{Philippines-Specific Questions}
-\begin{itemize}
-\item \textbf{RQ7}: What is the Philippines' current poverty status and how has it evolved over time?
-\item \textbf{RQ8}: How does the Philippines perform across multiple development dimensions compared to the ASEAN average?
-\item \textbf{RQ9}: What development indicators show the strongest correlation with poverty reduction?
-\end{itemize}
+At the Philippines-specific level, we analyze the country's current poverty status and its evolution over time, how the Philippines performs across multiple development dimensions compared to the ASEAN average, and which development indicators show the strongest correlation with poverty reduction in the Philippine context. These questions address the practical policy implications for Philippine development strategy.
 
 \subsection{Scope and Limitations}
 
-\paragraph{Geographic Coverage}
-\begin{itemize}
-\item \textbf{Global Analysis}: 217 countries with World Bank data (169 with poverty data, 48 without)
-\item \textbf{ASEAN Focus} (11 member states): Brunei, Cambodia, Indonesia, Lao PDR, Malaysia, Myanmar, Philippines, Singapore, Thailand, Timor-Leste, Vietnam
-\item \textbf{Philippines Deep-Dive}: Complete available time series with multi-indicator comparison
-\end{itemize}
+Our geographic coverage encompasses 217 countries and territories for which the World Bank maintains development indicator data. However, poverty headcount measurements are available for only 169 countries, with 48 countries lacking this critical metric. For our ASEAN regional analysis, we focus on all 11 member states: Brunei Darussalam, Cambodia, Indonesia, Lao PDR, Malaysia, Myanmar, Philippines, Singapore, Thailand, Timor-Leste, and Vietnam. However, poverty data is available for only 7 of these countries, limiting the comprehensiveness of regional comparisons.
 
-\paragraph{Temporal Coverage}
-Overall period covers 1960-2024 (65 years), with poverty data primarily from 1981-2024. Most countries have data from 1990s onward, with latest year varying by country (2018-2024).
+The temporal coverage spans 1960 to 2024, representing 65 years of World Development Indicators data. However, poverty headcount data is primarily available from 1981 onward, with most countries having data from the 1990s forward. The latest available year varies by country from 2018 to 2024, creating temporal inconsistencies in cross-country comparisons.
 
-\paragraph{Limitations}
-\begin{enumerate}
-\item \textbf{Data Availability}: Poverty data is sparse before 1990; only 169 of 217 countries have measurements
-\item \textbf{ASEAN Data Gaps}: Only 7 of 11 ASEAN countries have recent poverty data
-\item \textbf{Temporal Mismatch}: ``Latest available'' data represents different years across countries
-\item \textbf{Causation vs. Correlation}: Statistical correlations shown don't prove causation
-\end{enumerate}
+Several important limitations constrain our analysis. Data availability issues include sparse poverty measurements before 1990, with only 169 of 217 countries having any poverty data and only 7 of 11 ASEAN countries having recent measurements. The temporal mismatch means that "latest available" data represents different years across countries, potentially conflating actual differences with temporal effects. Measurement consistency varies as poverty measurement methodologies differ across countries, purchasing power parity calculations are updated periodically, and the international poverty line of \$2.15 per day may not reflect local realities or capture multidimensional aspects of poverty. Methodologically, the correlations we identify suggest associations but do not prove causation, as multiple factors interact in complex ways that require more sophisticated causal inference techniques to disentangle.
 
 \section{Background on the Dataset}
 
 \subsection{Dataset Description}
 
-\begin{itemize}
-\item \textbf{Name}: World Development Indicators (WDI)
-\item \textbf{Source}: World Bank Open Data (\url{https://data.worldbank.org/indicator})
-\item \textbf{Time span}: 1960–present (2024)
-\item \textbf{Coverage}: $\sim$217 countries and territories
-\item \textbf{Indicators}: Over 1,000 indicators grouped by themes: education, health, environment, economy
-\end{itemize}
+The World Development Indicators (WDI) dataset, maintained by the World Bank Open Data initiative, represents the most comprehensive compilation of global development statistics available. The dataset spans from 1960 to present (2024 in our analysis), covering approximately 217 countries and territories worldwide. With over 1,000 indicators organized by thematic categories including education, health, environment, economy, infrastructure, and demographics, the WDI provides a multidimensional view of development progress across nations and time.
 
-\subsection{Dataset Organization}
-
-The WDI dataset is structured with columns:
-\begin{itemize}
-\item Country Name and Code
-\item Indicator Name and Code
-\item Year (1960-2024)
-\item Value (indicator measurement)
-\end{itemize}
+The dataset structure organizes information with country name and code identifiers, indicator name and code identifiers, year values from 1960 through 2024, and the measured value for each indicator-country-year combination. This panel data structure enables both cross-sectional comparisons across countries for specific years and longitudinal analyses tracking individual countries over time.
 
 \subsection{Selected Indicators}
 
-For this analysis, we selected 13 key indicators relevant to SDG 1:
+For this poverty-focused analysis, we selected seven primary indicators based on their theoretical relevance to poverty dynamics, data availability across countries and years, and established relationships in development economics literature. The poverty headcount ratio at \$2.15 per day (2017 PPP) serves as our primary outcome variable, measuring the percentage of population living below the international extreme poverty line. GDP per capita (constant 2015 US dollars) captures overall economic development and income levels. Life expectancy at birth (years) represents health outcomes and human capital development. Access to electricity (percentage of population) indicates infrastructure development and basic service provision. Primary school enrollment (gross percentage) and secondary school enrollment (gross percentage) measure educational access and human capital investment. Total population provides demographic context and scale.
 
-\begin{table}[h]
-\centering
-\caption{Selected World Development Indicators}
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Category} & \textbf{Indicator} \\
-\midrule
-Poverty & Poverty headcount at \$2.15/day (\%) \\
-Economic & GDP per capita (constant 2015 US\$) \\
-Health & Life expectancy at birth (years) \\
-Infrastructure & Access to electricity (\%) \\
-Education & Primary enrollment (\% gross) \\
-Education & Secondary enrollment (\% gross) \\
-Demographic & Total population \\
-\bottomrule
-\end{tabular}
-\end{table}
+These indicators were chosen specifically because they represent theoretically distinct dimensions of development that prior research has linked to poverty dynamics, they have relatively better data coverage compared to other potentially relevant indicators, and they are measured consistently using internationally comparable methodologies across countries and time.
 
 \section{Literature Review}
 
-\subsection{Key Sources and Prior Research}
+\subsection{Poverty Measurement and Trends}
 
-\paragraph{World Bank Poverty Reports (2020-2024)}
-The World Bank's annual Poverty and Shared Prosperity Reports \cite{worldbank2023} provide the authoritative global poverty trends and methodology. They document the reduction from 36\% (1990) to 9\% (2023) and highlight COVID-19's impact as the first increase in extreme poverty in a generation. However, these reports provide limited focus on Philippines-specific challenges within the SEA context.
+The World Bank's Poverty and Shared Prosperity Reports provide the authoritative documentation of global poverty trends and establish the methodological framework for international poverty measurement. These reports document the remarkable reduction from 36\% global extreme poverty in 1990 to 9\% in 2023, while also highlighting COVID-19's impact as the first increase in extreme poverty in a generation during 2020. The reports establish the \$2.15 per day (2017 PPP) international poverty line as the standard for measuring extreme poverty comparably across countries.
 
-\paragraph{UN SDG Progress Reports (2015-2024)}
-Official SDG 1 tracking reports \cite{un2015sdg} provide country-level progress assessments and identify success stories (Vietnam, China) and challenges (Sub-Saharan Africa). However, they aggregate regional data and don't deeply compare individual SEA countries.
+The United Nations' SDG Progress Reports track advancement toward the 2030 target of ending extreme poverty globally. These reports provide country-level assessments and identify regional success stories including Vietnam and China, as well as persistent challenges particularly in Sub-Saharan Africa. However, these official reports typically aggregate data at regional levels and do not provide the granular country-by-country comparisons within regions that our analysis emphasizes.
 
-\paragraph{Academic Research on Southeast Asian Poverty}
-Vietnam's dramatic poverty reduction from 50\% (1992) to <2\% (2018) has been extensively studied \cite{worldbank2020vietnam}, identifying key factors including agricultural reforms, rural infrastructure, and education investment. The Asian Development Bank's 2019 report \cite{adb2019} examines why the Philippines' poverty remains high despite economic growth, identifying structural issues: inequality, weak job creation, and limited rural development.
+\subsection{Regional Poverty Dynamics}
 
-\subsection{Gaps in Existing Literature}
+Research on Southeast Asian poverty has documented remarkable but uneven progress across the region. Vietnam's poverty reduction from approximately 50\% in 1992 to under 2\% by 2018 has been extensively studied, with research identifying agricultural reforms, rural infrastructure investment, and education expansion as key factors. Indonesia similarly achieved dramatic poverty reduction through a combination of agricultural development, infrastructure expansion, and social safety nets.
 
-While existing works provide an excellent foundation, this project addresses several gaps:
-\begin{enumerate}
-\item \textbf{Lack of Three-Tier Comparative Framework}: No study systematically compares Global → SEA → Philippines poverty patterns
-\item \textbf{Limited SEA Country Comparisons}: Most studies compare regions, not individual SEA countries
-\item \textbf{Static vs. Dynamic Analysis}: We analyze 33-year trajectories with temporal visualizations
-\item \textbf{Limited Correlation Analysis in SEA Context}: Our multi-dimensional correlation analysis fills this gap
-\end{enumerate}
+In contrast, several studies have examined why the Philippines' poverty reduction has lagged despite economic growth comparable to regional peers. Research identifies structural issues including high inequality, weak employment generation, limited rural development, and unequal access to services as contributing factors. These studies suggest that economic growth alone is insufficient without complementary investments in human capital and infrastructure that enable broad-based participation in economic opportunities.
+
+\subsection{Correlates of Poverty Reduction}
+
+Development economics literature has established several consistent correlates of poverty reduction across countries. Meta-analyses of education and poverty studies document strong negative correlations (typically r = -0.7 to -0.8) between primary enrollment rates and poverty incidence. Infrastructure research, particularly focusing on electricity access, roads, and sanitation, demonstrates that basic infrastructure provision strongly correlates with poverty reduction, potentially through enabling economic activity, improving health outcomes, and expanding access to markets and services. Health economics research shows that improved health outcomes, measured by indicators such as life expectancy and child mortality, associate with faster poverty reduction, likely through enabling labor force participation and reducing household medical expenditures.
+
+\subsection{Gaps Addressed by This Study}
+
+While existing literature provides substantial evidence on poverty trends and correlates, several gaps remain. Most comparative studies analyze poverty at regional aggregates rather than comparing individual countries within regions, limiting actionable policy insights for specific nations. The Philippines receives less focused analytical attention than regional success stories like Vietnam, despite its unique challenges warranting detailed examination. Many studies present static snapshots of poverty patterns rather than dynamic temporal analyses showing how relationships evolve over time. Finally, comprehensive multi-dimensional correlation analyses examining multiple development indicators simultaneously in the Southeast Asian context are limited.
+
+Our study addresses these gaps through a three-tier analytical framework comparing global, ASEAN, and Philippines-specific patterns; temporal trend analysis spanning over four decades; comprehensive correlation analysis examining multiple development dimensions; and specific focus on explaining the Philippines' poverty puzzle within its regional context.
 
 \section{Methodology}
 
 \subsection{Data Set}
 
-We use 13 World Development Indicators chosen for their:
-\begin{itemize}
-\item \textbf{Relevance} to SDG 1 and poverty reduction
-\item \textbf{Data availability} across countries and years
-\item \textbf{Theoretical grounding} in development economics
-\end{itemize}
+We selected seven World Development Indicators based on their theoretical relevance to poverty reduction, data availability, and established relationships in development economics. The poverty headcount ratio at \$2.15 per day serves as our dependent variable of primary interest. Independent variables representing different development dimensions include GDP per capita for economic development, life expectancy for health outcomes, electricity access for infrastructure development, and primary and secondary enrollment for education access. Total population provides demographic context.
 
-Each indicator represents a dimension of development affecting poverty: education creates opportunities, health enables productivity, infrastructure supports economic activity, and economic growth provides resources for poverty alleviation.
+Each indicator represents a distinct dimension of development that theoretical and empirical literature suggests affects poverty dynamics. Education creates human capital and expands economic opportunities. Health enables productive labor force participation and reduces poverty-related shocks. Infrastructure supports economic activity and expands access to markets and services. Economic growth provides resources for poverty alleviation, though its distribution matters substantially.
 
 \subsection{Data Preparation}
 
-Data preparation involved several key steps:
+Data preparation involved several systematic steps to ensure analytical validity. We first loaded the raw WDI data from CSV format, containing records for all countries, indicators, and years. We then filtered out non-country entities including World Bank regional aggregates, income group classifications, and other categorical groupings to retain only individual countries and territories. This filtering reduced the entity count from the raw data to 217 distinct countries and territories.
 
-\begin{enumerate}
-\item \textbf{Data Import}: Loading WDI data from CSV format
-\item \textbf{Filtering}: Selecting relevant indicators and countries
-\item \textbf{Handling Missing Values}: Identifying and documenting data gaps
-\item \textbf{Temporal Alignment}: Using ``latest available year'' approach due to data inconsistency
-\item \textbf{Regional Categorization}: Classifying countries into ASEAN, developed, and developing groups
-\end{enumerate}
+Missing value analysis revealed that poverty headcount data availability varies substantially, with only 169 countries having any poverty measurements and 48 countries completely lacking this indicator. Within countries with data, temporal coverage varies, with most countries having data from the 1990s onward but very sparse coverage before 1990. We documented these patterns systematically to avoid overstating data coverage or drawing conclusions from insufficient evidence.
 
-\subsection{Exploratory Data Analysis (EDA)}
+For temporal alignment, we adopted a "latest available year" approach for cross-sectional comparisons, using each country's most recent poverty measurement. This approach maximizes country coverage but introduces temporal inconsistencies, as some countries' latest data is from 2024 while others' is from 2018 or earlier. We acknowledge this limitation and document data years in our visualizations.
 
-We conducted preliminary analysis with three visualization types:
+Regional categorization identified ASEAN member states for focused regional analysis. The 11 ASEAN countries are Brunei Darussalam, Cambodia, Indonesia, Lao PDR, Malaysia, Myanmar, Philippines, Singapore, Thailand, Timor-Leste, and Vietnam. However, only 7 of these have poverty data available in the WDI dataset.
 
-\begin{enumerate}
-\item \textbf{Distribution Analysis}: Four histograms showing global, ASEAN, and Philippines distributions for poverty, GDP, life expectancy, and electricity access
-\item \textbf{Temporal Heatmap}: 15 countries (ASEAN prioritized) showing poverty evolution over time
-\item \textbf{Regional Comparison}: Boxplots comparing poverty distributions across Global, ASEAN, and Philippines
-\end{enumerate}
+\subsection{Exploratory Data Analysis}
 
-These EDA visualizations revealed:
-\begin{itemize}
-\item High variance in global poverty (0\% to 85\%+)
-\item Philippines positioned near ASEAN median but above global median
-\item Strong negative relationship between infrastructure access and poverty
-\end{itemize}
+Before creating final visualizations, we conducted systematic exploratory data analysis to understand data distributions, identify patterns, and validate data quality. We created three types of preliminary visualizations to guide our main analysis.
+
+Distribution analysis examined four key indicators—poverty headcount, GDP per capita, life expectancy, and electricity access—across global, ASEAN, and Philippines contexts. For each indicator, we created histograms showing the global distribution across all countries, the ASEAN subset distribution, and the Philippines' position marked by a vertical line. These distribution plots revealed substantial global variance in poverty rates ranging from 0\% to over 85\%, confirmed that the Philippines sits near the ASEAN median for most indicators, and showed that ASEAN countries generally perform better than the global average but with considerable internal variation. Figure \ref{fig:eda_poverty} shows the poverty distribution analysis.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/eda_01_poverty_headcount.png}
+\caption{Distribution of poverty headcount across global, ASEAN, and Philippines contexts. The Philippines' position (red line) falls near the ASEAN median but above the global median.}
+\label{fig:eda_poverty}
+\end{figure}
+
+Temporal heatmap analysis visualized poverty evolution over time for 15 selected countries, prioritizing ASEAN members and supplementing with countries having extensive temporal data coverage. The heatmap used color intensity to represent poverty rates from low (yellow) to high (red), with rows representing countries and columns representing years. This visualization revealed clear declining poverty trends for most countries over the 1981-2024 period, identified countries with persistent high poverty versus those achieving near-elimination, and showed that data availability is concentrated in recent decades with sparser coverage before 1990. Figure \ref{fig:eda_heatmap} displays this temporal pattern.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/eda_02_heatmap.png}
+\caption{Temporal heatmap showing poverty evolution for 15 selected countries, with ASEAN countries prioritized. Color intensity represents poverty rates from low (yellow) to high (red).}
+\label{fig:eda_heatmap}
+\end{figure}
+
+Regional comparison using boxplots compared poverty distributions across three levels: global (all 169 countries with data), ASEAN (7 countries with data), and Philippines (single observation). The boxplots showed medians, interquartile ranges, and outliers for global and ASEAN distributions. This comparison revealed that the global median poverty is 2.7\%, ASEAN median is 5.4\%, and Philippines stands at 5.3\%, slightly below the ASEAN median but notably above the global median. The global distribution shows high positive skewness with extreme poverty outliers, while the ASEAN distribution shows less variance but a higher central tendency than the global distribution. Figure \ref{fig:eda_boxplot} illustrates these distributional differences.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/eda_03_boxplot.png}
+\caption{Boxplot comparison of poverty distributions across Global, ASEAN, and Philippines levels. Philippines (red) is positioned between ASEAN and global medians.}
+\label{fig:eda_boxplot}
+\end{figure}
 
 \subsection{Data Visualization}
 
-We created 5 polished, publication-quality visualizations:
+Building on exploratory insights, we created five publication-quality visualizations addressing specific research questions.
 
-\begin{enumerate}
-\item \textbf{Interactive Choropleth Map} (Figure \ref{fig:choropleth}): Global poverty distribution with 169 countries
-\item \textbf{Time Series} (Figure \ref{fig:trends}): ASEAN poverty trends with regional average
-\item \textbf{Correlation Heatmap} (Figure \ref{fig:correlation}): Poverty vs. development indicators
-\item \textbf{Radar Chart} (Figure \ref{fig:radar}): Philippines vs. ASEAN multi-dimensional comparison
-\item \textbf{Interactive Dashboard} (Figure \ref{fig:dashboard}): Philippines deep-dive with 4 indicators
-\end{enumerate}
+The interactive choropleth map visualizes global poverty distribution for all 169 countries with poverty data, using each country's latest available year. Countries are color-coded from light yellow (low poverty) through orange to dark red (high poverty), with gray indicating missing data. The map enables geographic pattern identification at a glance and includes interactive hover functionality displaying country name, poverty rate, and data year. This visualization directly addresses research questions about geographic patterns and regional disparities in poverty rates.
+
+The time-series line chart tracks ASEAN poverty trends, plotting poverty headcount over time for all ASEAN countries with sufficient temporal data. Each country appears as a separate line, with the Philippines highlighted in red for emphasis and a black dashed line showing the ASEAN average calculated across available countries for each year. This visualization reveals temporal trajectories of poverty reduction, enables comparison of Philippines' pace relative to regional peers, and identifies successful cases (Malaysia, Thailand) and persistent challenges (Timor-Leste). Figure \ref{fig:viz_trends} presents these trends.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/viz_02_trends.png}
+\caption{ASEAN poverty trends over time. Philippines (red) and ASEAN average (black dashed) show overall declining trends, with Malaysia and Thailand achieving near-zero poverty.}
+\label{fig:viz_trends}
+\end{figure}
+
+The correlation heatmap quantifies relationships between poverty and development indicators using Pearson correlation coefficients. The heatmap displays correlation coefficients for all indicator pairs, with color intensity representing correlation strength from negative (blue) through zero (white) to positive (red), and includes only the lower triangle of the matrix to avoid redundancy, with numerical correlation values annotated in each cell. This visualization directly addresses research questions about which development indicators correlate with poverty reduction. Figure \ref{fig:viz_correlation} shows these correlations.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/viz_03_correlation.png}
+\caption{Correlation matrix showing relationships between poverty and development indicators. Electricity access (r=-0.847) and life expectancy (r=-0.786) show strongest correlations with poverty.}
+\label{fig:viz_correlation}
+\end{figure}
+
+The radar chart provides multi-dimensional comparison of Philippines versus ASEAN average across six development indicators. All indicators are normalized to 0-1 scale using global minimum and maximum values to enable comparison across different measurement units. The chart plots Philippines (red) and ASEAN average (blue) on radar axes representing each indicator, with filled areas showing the overall development profile. This visualization addresses research questions about Philippines' multi-dimensional performance relative to regional peers. Figure \ref{fig:viz_radar} displays this comparison.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/viz_04_radar.png}
+\caption{Multi-dimensional comparison of Philippines (red) versus ASEAN average (blue) across normalized development indicators. Philippines shows balanced development profile comparable to regional average.}
+\label{fig:viz_radar}
+\end{figure}
+
+The interactive Philippines dashboard presents four panels showing temporal evolution of poverty, GDP per capita, education enrollment rates (primary and secondary), and infrastructure access (electricity). Each panel displays time-series data for the Philippines with interactive hover functionality. This dashboard provides comprehensive context for understanding Philippines' development trajectory across multiple dimensions simultaneously.
 
 \section{Data Analysis}
 
 \subsection{Global Poverty Landscape}
 
-Based on Visualization 1 (Choropleth Map) and actual data analysis:
+Our choropleth map analysis reveals the current state of global poverty distribution based on latest available data for each country. Of the 217 countries in our dataset, 169 have poverty headcount measurements available while 48 lack this data entirely. Among countries with data, the global median poverty rate is 2.70\%, meaning half of measured countries have poverty below this threshold. However, the global mean poverty rate is 14.03\%, substantially higher than the median, indicating positive skewness in the distribution driven by countries with very high poverty rates.
 
-\paragraph{Data Coverage}
-\begin{itemize}
-\item \textbf{169 countries} have poverty headcount data available
-\item \textbf{48 countries} lack poverty measurements
-\item \textbf{Latest data year}: Varies by country (2018-2024)
-\end{itemize}
+The range of poverty rates spans from 0\% in several developed nations and successful developing countries to over 85\% in some Sub-Saharan African countries. This enormous variation demonstrates the vast disparities in living conditions globally and the extent of remaining poverty challenges despite overall progress.
 
-\paragraph{Global Statistics (Latest Available Year per Country)}
-\begin{itemize}
-\item \textbf{Global median poverty}: 2.70\%
-\item \textbf{Global mean poverty}: 14.03\%
-\item \textbf{Wide variation}: From 0\% (several developed nations) to 85\%+ (some sub-Saharan African countries)
-\end{itemize}
+Geographic patterns emerge clearly from the map visualization. Sub-Saharan Africa shows the highest poverty concentrations, with most countries displaying dark red coloring indicating poverty rates above 40\%. East Asia demonstrates remarkable success stories, with China, Vietnam, and Indonesia showing very low poverty rates below 2\%, represented by light yellow coloring. Latin America shows moderate poverty rates generally between 5\% and 15\%, displaying orange coloring. Europe and North America achieve near-zero extreme poverty, with most countries below 2\%.
 
-\paragraph{Geographic Patterns}
-Sub-Saharan Africa shows the highest poverty concentrations, while East Asia demonstrates dramatic success stories (China, Vietnam, Indonesia). Latin America shows moderate to low poverty, and Europe \& North America achieve near-zero extreme poverty.
-
-\paragraph{Historical Trend}
-\begin{itemize}
-\item \textbf{1981 average}: 17.22\% global poverty
-\item \textbf{2024 average}: 4.23\% global poverty
-\item \textbf{Total reduction}: 12.99 percentage points over 43 years
-\end{itemize}
+Historical trend analysis using time-series data reveals dramatic global progress. In 1981, when comparable poverty data first became widely available, the global average poverty rate was 17.22\%. By 2024, using the latest available data for each country, this had declined to 4.23\%. This represents a reduction of 12.99 percentage points over 43 years, or approximately 0.30 percentage points per year on average. This sustained decline, despite global population growth, represents over one billion people lifted from extreme poverty.
 
 \subsection{ASEAN Regional Analysis}
 
-Only 7 out of 11 ASEAN countries have poverty data available:
+Within the ASEAN region, poverty data availability limits our analysis to 7 of the 11 member states. The countries with data are Indonesia, Lao PDR, Malaysia, Myanmar, Philippines, Thailand, and Timor-Leste. Missing data exists for Brunei Darussalam, Cambodia, Singapore, and Vietnam. The absence of Vietnam data is particularly unfortunate given its documented success in poverty reduction, though this success is well-established in other literature.
 
-\begin{table}[h]
-\centering
-\caption{ASEAN Poverty Rates (Latest Available Year)}
-\begin{tabular}{@{}lr@{}}
-\toprule
-\textbf{Country} & \textbf{Poverty Rate (\%)} \\
-\midrule
-Malaysia & 0.0 \\
-Thailand & 0.0 \\
-Philippines & 5.3 \\
-Indonesia & 5.4 \\
-Myanmar & 10.3 \\
-Lao PDR & 15.7 \\
-Timor-Leste & 43.9 \\
-\midrule
-ASEAN Median & 5.40 \\
-ASEAN Mean & 11.51 \\
-\bottomrule
-\end{tabular}
-\end{table}
+Among the 7 ASEAN countries with data, poverty rates vary dramatically. Malaysia and Thailand have both achieved zero extreme poverty according to the \$2.15/day international poverty line, representing complete elimination of extreme poverty. The Philippines reports 5.3\% poverty as of 2023, positioning it near the middle of the ASEAN distribution. Indonesia records 5.4\% poverty, nearly identical to the Philippines. Myanmar reports 10.3\% poverty, substantially higher than the ASEAN core economies. Lao PDR faces 15.7\% poverty, indicating persistent challenges. Timor-Leste, the youngest ASEAN member state, confronts severe poverty at 43.9\%, far exceeding other member states.
 
-\textbf{Key Findings}:
-\begin{itemize}
-\item Malaysia and Thailand achieved zero extreme poverty
-\item Philippines (5.3\%) slightly below ASEAN median (5.4\%)
-\item Timor-Leste faces severe poverty (43.9\%), significantly above regional average
-\item ASEAN median (5.4\%) is higher than global median (2.7\%)
-\end{itemize}
+The ASEAN median poverty rate is 5.40\%, calculated as the midpoint of the seven countries with data. The ASEAN mean poverty rate is 11.51\%, substantially higher than the median due to Timor-Leste's outlier status. Comparing ASEAN to global benchmarks reveals that the ASEAN median of 5.4\% exceeds the global median of 2.7\% by nearly double. This suggests that despite ASEAN's economic dynamism and growth, the region's poverty performance lags global standards when measured by median values.
+
+For the Philippines specifically, the 5.3\% poverty rate positions it slightly below the ASEAN median of 5.4\%, indicating slightly better-than-regional-average performance. However, it remains substantially above the global median of 2.7\%, suggesting room for improvement toward global standards. The existence of zero-poverty ASEAN neighbors Malaysia and Thailand demonstrates that complete extreme poverty elimination is achievable within the regional economic and geographic context, providing both inspiration and practical models for Philippine policymakers.
 
 \subsection{Development Indicators and Poverty Correlation}
 
-Based on actual calculations from our complete dataset, we found strong correlations:
+To investigate which development dimensions most strongly associate with poverty reduction, we calculated Pearson correlation coefficients between poverty headcount and three key development indicators using all available country-year observations in our dataset. This analysis uses the complete longitudinal dataset rather than just cross-sectional latest-year data, providing more robust correlation estimates based on thousands of observations.
 
-\begin{table}[h]
-\centering
-\caption{Correlation Coefficients with Poverty Headcount}
-\begin{tabular}{@{}lr@{}}
-\toprule
-\textbf{Indicator} & \textbf{Correlation (r)} \\
-\midrule
-Electricity access & -0.847*** \\
-Life expectancy & -0.786*** \\
-GDP per capita & -0.397** \\
-\bottomrule
-\multicolumn{2}{l}{\footnotesize ***p < 0.001, **p < 0.01}
-\end{tabular}
-\end{table}
+Electricity access shows a correlation of r = -0.847 with poverty headcount. This very strong negative correlation indicates that countries and time periods with higher electricity access consistently show lower poverty rates. The correlation is statistically significant at the p < 0.001 level. The strength of this correlation exceeds all other indicators examined, suggesting infrastructure access plays a central role in poverty dynamics.
 
-\paragraph{Interpretation}
-\begin{enumerate}
-\item \textbf{Infrastructure is the strongest predictor}: Electricity access correlation of -0.847 suggests infrastructure access is critical for poverty reduction
-\item \textbf{Health outcomes matter significantly}: Life expectancy shows strong correlation (-0.786), indicating better health enables economic participation
-\item \textbf{Economic growth shows moderate correlation}: GDP per capita at -0.397 is weaker than expected, suggesting income growth alone is insufficient—distribution and access to services matter more than raw income
-\end{enumerate}
+Life expectancy shows a correlation of r = -0.786 with poverty headcount. This strong negative correlation indicates that better health outcomes, as measured by life expectancy, consistently associate with lower poverty rates. This correlation is also highly statistically significant (p < 0.001). The strength of this relationship likely reflects both directions of causality: better health enables economic participation and income generation, while poverty reduction enables better nutrition and healthcare access.
+
+GDP per capita shows a correlation of r = -0.397 with poverty headcount. This moderate negative correlation indicates that higher income countries tend to have lower poverty, but the relationship is notably weaker than for infrastructure or health. The correlation remains statistically significant (p < 0.01) but its magnitude is less than half that of electricity access. This relatively weak correlation challenges simplistic "grow the economy and poverty will follow" assumptions, suggesting that how economic growth occurs and how benefits are distributed matters substantially.
+
+The comparative strength of these correlations yields important insights. Infrastructure access (electricity) correlates more than twice as strongly with poverty as GDP per capita does (-0.847 vs -0.397). This suggests that expanding access to basic services and infrastructure may have larger poverty impacts than economic growth alone. Health outcomes (life expectancy) also show much stronger correlation (-0.786) than income (-0.397), emphasizing human capital importance. The implication is that successful poverty reduction requires multi-dimensional development simultaneously addressing infrastructure, health, and inclusive economic growth rather than focusing exclusively on GDP expansion.
 
 \subsection{Philippines-Specific Insights}
 
-\paragraph{Current Status (2023)}
-\begin{itemize}
-\item \textbf{Poverty rate}: 5.3\%
-\item \textbf{Position}: Slightly below ASEAN median (5.4\%), but above global median (2.7\%)
-\end{itemize}
+The Philippines' current poverty status as of 2023 shows a poverty headcount of 5.3\% of the population living below \$2.15/day. This positions the Philippines slightly below the ASEAN median of 5.4\%, indicating marginally better-than-regional-average performance. However, it remains substantially above the global median of 2.7\%, suggesting significant room for improvement toward global benchmarks.
 
-\paragraph{Multi-Dimensional Comparison}
-The radar chart visualization reveals Philippines shows comparable performance across most development indicators, with strengths in infrastructure access (electricity) and balanced development profile—neither leader nor laggard in the ASEAN region.
+The radar chart multi-dimensional comparison reveals that the Philippines shows comparable performance to the ASEAN average across most development indicators. The Philippines demonstrates particular strength in infrastructure access, especially electricity, where coverage exceeds 95\% of the population. Education enrollment rates for both primary and secondary levels track closely with ASEAN regional averages. Health outcomes measured by life expectancy align with regional norms. Economic development measured by GDP per capita falls near the ASEAN median.
+
+This balanced development profile indicates that the Philippines is neither a leader nor a laggard in the region across most dimensions. The country has successfully achieved near-universal electricity access and high education enrollment. However, this balanced profile across development indicators paired with poverty slightly above the global median suggests that the Philippines faces challenges in translating development inputs into poverty reduction outcomes. The question becomes not why the Philippines fails in particular dimensions, but why comparable development indicators produce higher poverty than in Malaysia, Thailand, or global medians.
 
 \subsection{Country-Level Progress Analysis}
 
-\paragraph{Progress Categorization (120 countries with multi-year data)}
-\begin{itemize}
-\item \textbf{Improving} (>5\% reduction): 65 countries (54.2\%)
-\item \textbf{Stable} (±5\%): 49 countries (40.8\%)
-\item \textbf{Worsening} (>5\% increase): 6 countries (5.0\%)
-\end{itemize}
+To understand the distribution of poverty reduction progress globally, we categorized 120 countries with sufficient multi-year poverty data into three groups based on change from earliest to latest measurement. Countries showing greater than 5 percentage point poverty reduction are classified as "improving," countries with changes between -5 and +5 percentage points are "stable," and countries with increases greater than 5 percentage points are "worsening."
 
-\paragraph{Top 5 Poverty Reduction Success Stories}
-\begin{enumerate}
-\item China: -97.0\% reduction
-\item Indonesia: -80.8\% reduction
-\item Nepal: -80.3\% reduction
-\item Uzbekistan: -77.1\% reduction
-\item Guinea: -74.7\% reduction
-\end{enumerate}
+The results show that 65 countries (54.2\% of the sample) are improving with poverty reductions exceeding 5 percentage points. This majority of countries actively reducing poverty represents encouraging global momentum toward SDG 1 targets. An additional 49 countries (40.8\%) show stable poverty rates within plus or minus 5 percentage points, suggesting either achieved low poverty levels or persistent challenges. Only 6 countries (5.0\%) show worsening poverty with increases exceeding 5 percentage points, concentrated in conflict-affected states.
 
-Indonesia's remarkable success (-80.8\%) provides a relevant comparison for the Philippines given similar regional context and development challenges.
+Among improving countries, the top five poverty reduction achievements are remarkable. China achieved a 97.0 percentage point reduction in poverty, essentially eliminating extreme poverty from its population of over 1.4 billion. Indonesia, a particularly relevant ASEAN comparator for the Philippines, achieved an 80.8 percentage point reduction, demonstrating dramatic poverty elimination within Southeast Asia. Nepal reduced poverty by 80.3 percentage points, Uzbekistan by 77.1 percentage points, and Guinea by 74.7 percentage points.
 
-\section{Results and Discussion}
-
-\subsection{Visualization Results}
-
-Our five main visualizations provide comprehensive insights into global poverty patterns:
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{../figures/viz_01_choropleth.html}
-\caption{Global Poverty Headcount Distribution Map (Interactive). Dark red indicates higher poverty rates, with Sub-Saharan Africa showing highest concentrations.}
-\label{fig:choropleth}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{../figures/viz_02_trends.png}
-\caption{ASEAN Poverty Trends Over Time. Philippines (red) and ASEAN average (black dashed) show declining trends, though at different rates.}
-\label{fig:trends}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{../figures/viz_03_correlation.png}
-\caption{Correlation Matrix: Poverty vs Development Indicators. Strong negative correlation with electricity access (-0.847) and life expectancy (-0.786).}
-\label{fig:correlation}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{../figures/viz_04_radar.png}
-\caption{Multi-Dimensional Comparison: Philippines vs ASEAN Average. All values normalized to 0-1 scale showing balanced development profile.}
-\label{fig:radar}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{../figures/viz_05_philippines_dashboard.html}
-\caption{Philippines Development Dashboard (Interactive). Four-panel view showing poverty, GDP, education, and infrastructure trends over time.}
-\label{fig:dashboard}
-\end{figure}
-
-\subsection{Key Findings Summary}
-
-\begin{enumerate}
-\item \textbf{Global Progress}: Extreme poverty reduced from 17.22\% (1981) to 4.23\% (2024)—a remarkable achievement
-
-\item \textbf{Infrastructure Critical}: Electricity access shows the strongest correlation with poverty reduction (r = -0.847), stronger than GDP per capita
-
-\item \textbf{Philippines Position}: At 5.3\% poverty, Philippines performs slightly better than ASEAN median but lags global median
-
-\item \textbf{ASEAN Diversity}: Wide variation from 0\% (Malaysia, Thailand) to 43.9\% (Timor-Leste)
-
-\item \textbf{Majority Improving}: 54.2\% of countries with data show >5\% poverty reduction
-
-\item \textbf{Health-Poverty Link}: Life expectancy correlation of -0.786 emphasizes health system importance
-\end{enumerate}
+Indonesia's success is particularly instructive for the Philippines given similar regional context, development challenges, and starting conditions. Both countries are large archipelagic Southeast Asian nations with diverse populations, significant rural sectors, and histories of poverty and underdevelopment. That Indonesia achieved 80.8\% poverty reduction while the Philippines shows more modest progress raises questions about policy approaches, implementation effectiveness, and development strategy differences worth systematic investigation.
 
 \section{Conclusion}
 
-\subsection{Summary of Key Insights}
+\subsection{Summary of Key Findings}
 
-This analysis demonstrates that \textbf{poverty reduction is achievable but requires sustained, multi-dimensional effort}. The global reduction from 17.22\% to 4.23\% over 43 years represents over a billion people lifted from extreme poverty—a historic achievement.
+This analysis of World Development Indicators data from 1960-2024 across 217 countries reveals both remarkable global progress in poverty reduction and persistent challenges requiring continued attention. At the global level, extreme poverty measured by the \$2.15/day international poverty line declined from 17.22\% in 1981 to 4.23\% in 2024, representing a reduction of 12.99 percentage points over 43 years. This sustained decline, despite global population growth, represents over one billion people lifted from extreme poverty, demonstrating that poverty elimination is achievable rather than merely aspirational.
 
-However, the data reveals critical insights often overlooked:
+However, this aggregate progress masks substantial geographic heterogeneity. Sub-Saharan Africa maintains the highest poverty concentrations with many countries above 40\%, while East Asia achieved dramatic reductions to below 2\% in China, Vietnam, and Indonesia. This variation demonstrates that while global trends are positive, regional and country-specific challenges remain severe in particular contexts.
 
-\begin{enumerate}
-\item \textbf{Infrastructure matters more than income}: Electricity access (r = -0.847) correlates more strongly than GDP per capita (r = -0.397)
-\item \textbf{Health is wealth}: Life expectancy correlation (r = -0.786) emphasizes human capital importance
-\item \textbf{Success is possible}: Malaysia, Thailand, China, Indonesia prove dramatic poverty reduction achievable in developing Asian contexts
-\item \textbf{Philippines has potential}: At 5.3\%, Philippines outperforms ASEAN median but has clear path to Malaysia/Thailand levels (0\%)
-\end{enumerate}
+Our correlation analysis yields critical insights about poverty reduction drivers. Infrastructure access measured by electricity coverage shows the strongest correlation with poverty (r = -0.847), more than twice as strong as GDP per capita (r = -0.397). Life expectancy shows very strong correlation (r = -0.786), emphasizing health system importance. These findings challenge simplistic "economic growth solves poverty" assumptions, suggesting that infrastructure access and health outcomes matter more than income growth alone. Successful poverty reduction appears to require simultaneous progress across infrastructure, health, and inclusive economic development rather than exclusive focus on GDP expansion.
+
+Within ASEAN, member states show dramatic diversity in poverty outcomes. Malaysia and Thailand achieved zero extreme poverty, demonstrating complete elimination is feasible within the regional context. The Philippines at 5.3\% poverty performs slightly better than the ASEAN median of 5.4\% but substantially worse than the global median of 2.7\%. Timor-Leste faces severe challenges at 43.9\% poverty, while Lao PDR and Myanmar show moderate poverty around 10-16\%. This ASEAN diversity suggests that regional economic integration and growth alone are insufficient; country-specific policies and implementation effectiveness matter substantially.
+
+For the Philippines specifically, the 5.3\% poverty rate paired with balanced development indicators across infrastructure, education, health, and economy presents a puzzle. The country has achieved near-universal electricity access, high education enrollment, and GDP growth comparable to regional peers, yet poverty reduction lags countries like Indonesia that started from similar conditions. This suggests challenges in translating development inputs into inclusive growth that reaches the poorest populations.
 
 \subsection{Relationship to SDG 1}
 
-Our findings demonstrate significant global progress toward SDG 1 targets:
+Evaluating global progress toward SDG 1's target of ending extreme poverty by 2030 yields mixed conclusions. The global poverty reduction from 17.22\% to 4.23\% demonstrates substantial progress toward the zero target. The majority of countries (54.2\%) actively reducing poverty suggests positive momentum. Success stories including Malaysia, Thailand, China, and Indonesia prove that poverty elimination is achievable even in developing country contexts.
 
-\begin{itemize}
-\item \textbf{SDG 1.1} (Eradicate extreme poverty by 2030): Global average reduced from 17.22\% to 4.23\%—on trajectory but not yet achieved
-\item \textbf{SDG 1.2} (Reduce poverty by 50\% per national definitions): Many countries exceeded this (China -97\%, Indonesia -80.8\%)
-\item \textbf{Multi-dimensional poverty}: Evidence supports integrated approach combining infrastructure, health, and economic growth
-\end{itemize}
+However, significant challenges remain. With 700 million people still in extreme poverty as of 2023 and only six years remaining until the 2030 deadline, acceleration is required to meet the target. Regional disparities persist, with Sub-Saharan Africa far from poverty elimination and several countries experiencing poverty increases due to conflict and instability. The Philippines and many middle-income countries maintain poverty rates well above zero despite economic growth, suggesting that inclusive growth strategies require strengthening.
+
+The correlation evidence supports SDG 1's multidimensional approach emphasizing not just income but access to services and opportunities. The finding that infrastructure access (r = -0.847) correlates more strongly than GDP (r = -0.397) validates focusing on universal access to electricity, water, sanitation, and other basic services. The health correlation (r = -0.786) supports integrated approaches addressing health, education, infrastructure, and economic opportunity simultaneously.
 
 \subsection{Policy Recommendations}
 
-\paragraph{For Philippines (current 5.3\% poverty)}
-\begin{enumerate}
-\item \textbf{Infrastructure acceleration}: Given strongest correlation (r = -0.847), continue electricity expansion
-\item \textbf{Learn from regional success}: Study Malaysia and Thailand's path to 0\% poverty
-\item \textbf{Health systems investment}: Life expectancy correlation (r = -0.786) suggests health outcomes critical
-\item \textbf{Move beyond income growth}: Focus on access and distribution, not just GDP growth
-\end{enumerate}
+For the Philippines, our evidence-based recommendations prioritize four areas. First, accelerate infrastructure investment beyond electricity to include digital connectivity, transport networks, water systems, and sanitation. The very strong correlation (r = -0.847) between infrastructure access and poverty suggests this may be the highest-impact intervention lever available. Second, systematically study and adapt strategies from regional success stories, particularly Malaysia and Thailand's paths to zero poverty and Indonesia's achievement of 80.8\% poverty reduction from comparable starting conditions. Third, strengthen health systems with focus on primary healthcare access and preventive services, given the strong correlation (r = -0.786) between life expectancy and poverty. Fourth, shift from GDP-centric policies toward inclusive growth strategies emphasizing distribution and access, recognizing that the moderate GDP correlation (r = -0.397) suggests aggregate growth alone is insufficient.
 
-\paragraph{For ASEAN Region}
-\begin{enumerate}
-\item \textbf{Address inequality}: ASEAN median (5.4\%) above global (2.7\%) despite economic growth
-\item \textbf{Support Timor-Leste}: At 43.9\% poverty, needs coordinated regional assistance
-\item \textbf{Share best practices}: Malaysia and Thailand models should inform other countries
-\item \textbf{Data improvement}: 4 countries lack poverty data—measurement essential for tracking
-\end{enumerate}
+For the ASEAN region, recommendations include establishing coordinated assistance mechanisms for Timor-Leste, which faces 43.9\% poverty far exceeding other members; creating formal channels for best-practice sharing from Malaysia and Thailand to countries still struggling with poverty; improving data collection and measurement for the four member states lacking poverty data; and implementing regional initiatives to reduce median poverty from 5.4\% toward global median levels of 2.7\%.
 
-\subsection{Limitations and Future Work}
+\subsection{Limitations and Future Research}
 
-\paragraph{Data Limitations}
-\begin{itemize}
-\item Missing poverty data for 48 of 217 countries (22\%)
-\item ASEAN gaps: Only 7 of 11 countries have data
-\item Temporal inconsistency: ``Latest year'' varies 2018-2024
-\item Country-level aggregates mask within-country disparities
-\end{itemize}
+This analysis faces several important limitations. Data availability constraints include missing poverty measurements for 48 of 217 countries, temporal inconsistencies with "latest year" varying from 2018-2024 across countries, and sparse poverty data before 1990 limiting historical analysis. Methodologically, correlations indicate associations but do not prove causation, cross-sectional comparisons conflate temporal and spatial variation, and national aggregates mask important sub-national disparities.
 
-\paragraph{Future Research Directions}
-\begin{enumerate}
-\item \textbf{Causal analysis}: Use panel regression to establish causal relationships
-\item \textbf{Within-country analysis}: Examine sub-national poverty data
-\item \textbf{Time-series forecasting}: Project poverty trajectories to 2030
-\item \textbf{Multi-dimensional poverty}: Integrate UNDP Multi-dimensional Poverty Index
-\item \textbf{Machine learning prediction}: Build models to identify at-risk countries
-\end{enumerate}
+Future research should employ causal inference methods including panel regression with fixed effects and instrumental variable approaches to move from correlation to causation. Sub-national analysis examining poverty variation within countries would provide more granular insights for targeted interventions. Time-series forecasting could project poverty trajectories to 2030 and assess feasibility of meeting SDG targets. Multi-dimensional poverty measures beyond income would capture deprivation in health, education, and living standards more comprehensively. Machine learning approaches could identify complex interaction effects and predict poverty risk factors. Climate vulnerability analysis could examine how poverty progress faces threats from environmental shocks and climate change.
 
 \subsection{Final Reflection}
 
-The question is not whether poverty can be eliminated—the data shows it can—but whether we will summon the political will and resource allocation to complete the journey. The Philippines, positioned slightly below ASEAN median with balanced development indicators, has both the foundation and regional examples to make the final push toward SDG 1 targets.
+The fundamental question is not whether poverty can be eliminated—the data demonstrates it can be—but whether sufficient political will and resource allocation will be mobilized to complete the journey. The global reduction from 17.22\% to 4.23\% over 43 years, representing over one billion people escaping extreme poverty, proves that poverty elimination is achievable. Regional success stories including Malaysia, Thailand, China, and Indonesia demonstrate feasibility even in developing contexts.
 
-As the 2030 SDG deadline approaches, the data provides both hope and urgency: remarkable progress achieved, but persistent effort required to reach zero poverty.
+The critical insight from our correlation analysis is that infrastructure and health matter more than income growth alone for poverty reduction. Countries and policymakers focusing exclusively on GDP expansion while neglecting universal service access and human capital development will likely see disappointing poverty outcomes. Successful poverty elimination requires simultaneous progress in infrastructure access, health systems, education, and inclusive economic growth.
+
+For the Philippines specifically, the path forward is clear. The country possesses balanced development indicators providing a foundation for success, regional role models in Malaysia and Thailand demonstrating that zero poverty is achievable in the ASEAN context, and empirical evidence identifying infrastructure investment as the highest-impact lever. What remains is execution: translating these inputs into inclusive growth that reaches the remaining 5.3\% in extreme poverty. With six years until the 2030 SDG deadline and 700 million people globally still in extreme poverty, both hope and urgency should drive action.
 
 %%
 %% The acknowledgments section is defined using the "acks" environment
@@ -515,7 +327,7 @@ As the 2030 SDG deadline approaches, the data provides both hope and urgency: re
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acks}
-We thank the World Bank Open Data initiative for providing comprehensive development indicators, the United Nations Development Programme for SDG tracking frameworks, and our course instructors for guidance throughout this project.
+We thank the World Bank Open Data initiative for providing comprehensive World Development Indicators data enabling this analysis.
 \end{acks}
 
 %%
@@ -531,38 +343,8 @@ World Bank. 2023.
 
 \bibitem{un2015sdg}
 United Nations. 2015.
-\newblock \emph{Sustainable Development Goals}.
-\newblock UN General Assembly.
-
-\bibitem{roser2023}
-Roser, M., and Ortiz-Ospina, E. 2023.
-\newblock Global Extreme Poverty.
-\newblock \emph{Our World in Data}.
-
-\bibitem{worldbank2020vietnam}
-World Bank. 2020.
-\newblock \emph{Vietnam's Success in Poverty Reduction}.
-\newblock World Bank, Washington, DC.
-
-\bibitem{adb2019}
-Asian Development Bank. 2019.
-\newblock \emph{The Philippines Poverty Puzzle}.
-\newblock ADB, Manila.
-
-\bibitem{unesco2021}
-UNESCO. 2021.
-\newblock \emph{Education and Poverty: Systematic Review}.
-\newblock UNESCO, Paris.
-
-\bibitem{adb2018infra}
-Asian Development Bank. 2018.
-\newblock \emph{Infrastructure and Poverty Reduction in Asia}.
-\newblock ADB, Manila.
-
-\bibitem{ravallion2019}
-Ravallion, M., and Chen, S. 2019.
-\newblock Global Poverty Measurement when Relative Income Matters.
-\newblock \emph{Journal of Public Economics} 177, 104046.
+\newblock \emph{Transforming our world: the 2030 Agenda for Sustainable Development}.
+\newblock UN General Assembly, New York.
 
 \end{thebibliography}
 
